@@ -1,3 +1,5 @@
 *.json
 *.xml
 *.txt
+*.csv
+*.tsv
