@@ -1,0 +1,9 @@
+graph Final {
+	price
+	price -- "sale price" [label=0.75]
+	price -- value [label=0.50]
+	price -- "wifi extender" [label=0.39]
+	"sale price"
+	value
+	"wifi extender"
+}

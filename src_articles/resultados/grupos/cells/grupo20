@@ -1,0 +1,9 @@
+graph Final {
+	lightweight
+	lightweight -- weight [label=0.73]
+	read
+	read -- "read screen" [label=0.71]
+	read -- weight [label=0.45]
+	"read screen"
+	weight
+}

@@ -1,0 +1,27 @@
+graph Final {
+	light
+	light -- sturdy [label=0.46]
+	light -- "touch display" [label=0.45]
+	light -- thinner [label=0.45]
+	light -- "presentation creation" [label=0.44]
+	light -- transport [label=0.43]
+	light -- "touch pad" [label=0.42]
+	light -- processing [label=0.41]
+	light -- "school work" [label=0.38]
+	light -- startup [label=0.35]
+	"presentation creation"
+	processing
+	processing -- "processing speed" [label=0.88]
+	"processing speed"
+	"school work"
+	startup
+	startup -- "wi-fi" [label=0.45]
+	sturdy
+	thinner
+	"touch display"
+	"touch display" -- windows10 [label=0.51]
+	"touch pad"
+	transport
+	"wi-fi"
+	windows10
+}

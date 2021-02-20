@@ -1,0 +1,9 @@
+graph Final {
+	deal
+	deal -- "wifi extender" [label=0.51]
+	extender
+	extender -- "wifi extender" [label=0.78]
+	extender -- "user friendly" [label=0.43]
+	"user friendly"
+	"wifi extender"
+}

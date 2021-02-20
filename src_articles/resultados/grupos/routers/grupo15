@@ -1,0 +1,13 @@
+graph Final {
+	"gigabyte speeds"
+	"gigabyte speeds" -- speeds [label=0.75]
+	"internet speeds"
+	"internet speeds" -- speeds [label=0.76]
+	speed
+	speed -- speeds [label=0.90]
+	speed -- start [label=0.45]
+	speeds
+	speeds -- "transfer speeds" [label=0.76]
+	start
+	"transfer speeds"
+}

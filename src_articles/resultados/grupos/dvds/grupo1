@@ -1,0 +1,43 @@
+graph Final {
+	connect
+	connect -- "sony quality" [label=0.54]
+	connect -- hdmi [label=0.39]
+	hdmi
+	"listening to music and books"
+	"listening to music and books" -- "quality picture" [label=0.63]
+	money
+	money -- quality [label=0.38]
+	"nice small"
+	"nice small" -- unit [label=0.48]
+	pic
+	pic -- picture [label=0.83]
+	picture
+	picture -- "picture quality" [label=0.75]
+	"picture quality"
+	"picture quality" -- quality [label=0.78]
+	"picture quality" -- sound [label=0.52]
+	"picture quality" -- works [label=0.42]
+	quality
+	quality -- "quality picture" [label=0.74]
+	quality -- "sony quality" [label=0.71]
+	quality -- "quality of player" [label=0.68]
+	quality -- "quality of the pictures" [label=0.64]
+	"quality of player"
+	"quality of the pictures"
+	"quality picture"
+	"sale price"
+	"sale price" -- work [label=0.40]
+	"sony customer service group"
+	"sony customer service group" -- sound [label=0.53]
+	"sony quality"
+	sound
+	unit
+	unit -- work [label=0.29]
+	"up-conversion option"
+	"up-conversion option" -- works [label=0.49]
+	wonderful
+	wonderful -- work [label=0.52]
+	work
+	work -- works [label=0.87]
+	works
+}

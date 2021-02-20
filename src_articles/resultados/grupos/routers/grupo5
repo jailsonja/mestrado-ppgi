@@ -1,0 +1,15 @@
+graph Final {
+	item
+	item -- purchase [label=0.44]
+	operate
+	operate -- range [label=0.53]
+	purchase
+	purchase -- range [label=0.45]
+	purchase -- "user friendly" [label=0.45]
+	quality
+	quality -- "quality of signal" [label=0.76]
+	"quality of signal"
+	"quality of signal" -- range [label=0.51]
+	range
+	"user friendly"
+}

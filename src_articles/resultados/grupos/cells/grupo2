@@ -1,0 +1,49 @@
+graph Final {
+	"front camera"
+	"front camera" -- "rear camera" [label=0.84]
+	"front camera" -- "processing speed" [label=0.63]
+	"google assistant"
+	"google assistant" -- speed [label=0.44]
+	mods
+	mods -- "moto mods" [label=0.80]
+	mods -- "moto-mods" [label=0.71]
+	"moto mods"
+	"moto mods" -- "screen size" [label=0.47]
+	"moto-mods"
+	navigate
+	navigate -- "size screen" [label=0.54]
+	"operation system"
+	"operation system" -- "user friendly" [label=0.64]
+	"picture quality"
+	"picture quality" -- use [label=0.44]
+	"processing speed"
+	"processing speed" -- speed [label=0.75]
+	processor
+	processor -- use [label=0.38]
+	"rear camera"
+	"rear camera" -- "rear cameras" [label=0.94]
+	"rear cameras"
+	"screen size"
+	"screen size" -- size [label=0.76]
+	"screen size" -- "user friendly" [label=0.60]
+	size
+	size -- "size screen" [label=0.74]
+	"size screen"
+	smartphone
+	smartphone -- use [label=0.45]
+	speed
+	speed -- "speed performance" [label=0.74]
+	speed -- "speed of operation" [label=0.71]
+	speed -- use [label=0.45]
+	"speed of operation"
+	"speed performance"
+	use
+	use -- "use for older people" [label=0.57]
+	use -- "user friendly" [label=0.55]
+	use -- "user interface" [label=0.53]
+	use -- "wide angle camera" [label=0.41]
+	"use for older people"
+	"user friendly"
+	"user interface"
+	"wide angle camera"
+}

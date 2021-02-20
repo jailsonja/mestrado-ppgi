@@ -1,0 +1,19 @@
+graph Final {
+	"gigabyte speeds"
+	"gigabyte speeds" -- "wireless router" [label=0.57]
+	installation
+	installation -- router [label=0.38]
+	"management software"
+	"management software" -- switch [label=0.44]
+	package
+	package -- switch [label=0.41]
+	protect
+	protect -- router [label=0.50]
+	router
+	router -- "wireless router" [label=0.71]
+	router -- switch [label=0.38]
+	"secure management"
+	"secure management" -- switch [label=0.48]
+	switch
+	"wireless router"
+}

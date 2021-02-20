@@ -1,0 +1,29 @@
+graph Final {
+	fast
+	fast -- "very smooth" [label=0.51]
+	fast -- speed [label=0.49]
+	fast -- "uploading pics straight to the cloud" [label=0.48]
+	fast -- weight [label=0.42]
+	fast -- slim [label=0.42]
+	fast -- "user friendly" [label=0.40]
+	"screen size"
+	"screen size" -- size [label=0.76]
+	"screen size" -- "user friendly" [label=0.60]
+	size
+	size -- "size screen" [label=0.74]
+	"size screen"
+	slim
+	speed
+	speed -- "speed performance" [label=0.74]
+	speed -- "speed of operation" [label=0.71]
+	speed -- update [label=0.49]
+	"speed of operation"
+	"speed performance"
+	stylish
+	stylish -- "very smooth" [label=0.64]
+	update
+	"uploading pics straight to the cloud"
+	"user friendly"
+	"very smooth"
+	weight
+}

@@ -1,0 +1,45 @@
+graph Final {
+	lightweight
+	lightweight -- picture [label=0.38]
+	"night pictures"
+	"night pictures" -- pictures [label=0.70]
+	performance
+	performance -- "photo performance" [label=0.79]
+	performance -- "tutorial online" [label=0.55]
+	performance -- polaroid [label=0.35]
+	"photo performance"
+	picture
+	picture -- pictures [label=0.90]
+	picture -- "picture suddenly appears" [label=0.61]
+	picture -- product [label=0.41]
+	"picture quality"
+	"picture quality" -- quality [label=0.74]
+	"picture suddenly appears"
+	pictures
+	pictures -- "quality pictures" [label=0.71]
+	pictures -- "sony camera" [label=0.48]
+	pictures -- polaroid [label=0.39]
+	"pictures in low light"
+	"pictures in low light" -- "quality of colors" [label=0.69]
+	polaroid
+	product
+	quality
+	quality -- "quality pics" [label=0.72]
+	quality -- "quality pictures" [label=0.72]
+	quality -- "video quality" [label=0.71]
+	quality -- "quality of colors" [label=0.68]
+	quality -- "quality of pictures" [label=0.66]
+	quality -- "quality of the picture" [label=0.66]
+	quality -- "quality of the photos" [label=0.64]
+	"quality of colors"
+	"quality of pictures"
+	"quality of the photos"
+	"quality of the picture"
+	"quality of the picture" -- "quality of the pictures on the screen" [label=0.87]
+	"quality of the pictures on the screen"
+	"quality pics"
+	"quality pictures"
+	"sony camera"
+	"tutorial online"
+	"video quality"
+}

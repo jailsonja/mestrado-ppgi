@@ -1,0 +1,9 @@
+graph Final {
+	feature
+	feature -- touchscreen [label=0.52]
+	feature -- "usb charging ports" [label=0.47]
+	touchscreen
+	"usb charging"
+	"usb charging" -- "usb charging ports" [label=0.90]
+	"usb charging ports"
+}

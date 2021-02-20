@@ -1,0 +1,17 @@
+graph Final {
+	picture
+	picture -- pictures [label=0.92]
+	picture -- "picture quality" [label=0.75]
+	picture -- "wide angle camera" [label=0.54]
+	"picture quality"
+	pictures
+	pictures -- "taking pictures" [label=0.79]
+	pictures -- videos [label=0.62]
+	pictures -- "wireless charging" [label=0.43]
+	storage
+	storage -- videos [label=0.44]
+	"taking pictures"
+	videos
+	"wide angle camera"
+	"wireless charging"
+}

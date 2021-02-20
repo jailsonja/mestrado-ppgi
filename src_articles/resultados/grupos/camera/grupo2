@@ -1,0 +1,23 @@
+graph Final {
+	learn
+	learn -- "wi-fi feature" [label=0.56]
+	learn -- use [label=0.47]
+	learn -- options [label=0.45]
+	memories
+	memories -- scrapbooks [label=0.55]
+	"menu text"
+	"menu text" -- use [label=0.45]
+	options
+	options -- "variety of scene options" [label=0.70]
+	"put film"
+	"put film" -- use [label=0.45]
+	scrapbooks
+	scrapbooks -- use [label=0.36]
+	"tutorial online"
+	"tutorial online" -- use [label=0.47]
+	use
+	use -- viewfinder [label=0.38]
+	"variety of scene options"
+	viewfinder
+	"wi-fi feature"
+}

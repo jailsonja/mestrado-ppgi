@@ -1,0 +1,7 @@
+graph Final {
+	film
+	film -- "put film" [label=0.75]
+	film -- "take with you" [label=0.42]
+	"put film"
+	"take with you"
+}

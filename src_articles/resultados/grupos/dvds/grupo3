@@ -1,0 +1,7 @@
+graph Final {
+	dvd
+	dvd -- "up-conversion option" [label=0.37]
+	dvd -- view [label=0.34]
+	"up-conversion option"
+	view
+}

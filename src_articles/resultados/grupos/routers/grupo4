@@ -1,0 +1,33 @@
+graph Final {
+	instructions
+	instructions -- "set up" [label=0.44]
+	"management software"
+	"management software" -- software [label=0.77]
+	"netgear genie"
+	"netgear genie" -- "set up" [label=0.44]
+	operate
+	operate -- "set up" [label=0.43]
+	"plug in"
+	"plug in" -- "power plug orientation" [label=0.76]
+	"plug in" -- "set up" [label=0.47]
+	"power plug"
+	"power plug" -- "power plug orientation" [label=0.84]
+	"power plug orientation"
+	protect
+	protect -- "set up" [label=0.46]
+	quick
+	quick -- "set up" [label=0.42]
+	reception
+	reception -- "set up" [label=0.44]
+	"set up"
+	"set up" -- software [label=0.41]
+	"set up" -- "wifi extender" [label=0.38]
+	software
+	software -- "software/app" [label=0.80]
+	software -- "update software" [label=0.79]
+	software -- "software genie" [label=0.78]
+	"software genie"
+	"software/app"
+	"update software"
+	"wifi extender"
+}

@@ -1,0 +1,25 @@
+graph Final {
+	fast
+	fast -- secure [label=0.44]
+	fast -- install [label=0.39]
+	install
+	install -- instructions [label=0.53]
+	install -- "wifi strength" [label=0.51]
+	install -- operate [label=0.44]
+	instructions
+	instructions -- works [label=0.38]
+	maintain
+	maintain -- secure [label=0.55]
+	"open port"
+	"open port" -- secure [label=0.59]
+	operate
+	secure
+	secure -- "secure management" [label=0.74]
+	"secure management"
+	"usb charging"
+	"usb charging" -- "usb charging ports" [label=0.90]
+	"usb charging ports"
+	"usb charging ports" -- works [label=0.42]
+	"wifi strength"
+	works
+}

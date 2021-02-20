@@ -1,0 +1,67 @@
+graph Final {
+	"feeling performance"
+	"feeling performance" -- performance [label=0.81]
+	"fingerprint scanner"
+	"fingerprint scanner" -- "moto mods" [label=0.46]
+	glass
+	glass -- screen [label=0.48]
+	"ios 10"
+	"ios 10" -- screen [label=0.45]
+	light
+	light -- weight [label=0.69]
+	light -- "twist for camera" [label=0.57]
+	light -- "picture quality" [label=0.54]
+	light -- slim [label=0.54]
+	lightweight
+	lightweight -- weight [label=0.73]
+	"moto mods"
+	"moto mods" -- "screen size" [label=0.47]
+	navigate
+	navigate -- "size screen" [label=0.54]
+	navigate -- slim [label=0.46]
+	"ok google"
+	"ok google" -- waterproof [label=0.50]
+	"operation system"
+	"operation system" -- "user friendly" [label=0.64]
+	performance
+	performance -- "speed performance" [label=0.83]
+	performance -- profile [label=0.55]
+	performance -- "screen size" [label=0.55]
+	"picture quality"
+	profile
+	"read screen"
+	"read screen" -- screen [label=0.73]
+	response
+	response -- "screen response" [label=0.83]
+	runs
+	runs -- smooth [label=0.51]
+	"samsung galaxy s7 edge"
+	"samsung galaxy s7 edge" -- waterproof [label=0.48]
+	"samsung galaxy s7 edge" -- screen [label=0.44]
+	screen
+	screen -- "screen size" [label=0.74]
+	screen -- "size screen" [label=0.73]
+	screen -- "screen display" [label=0.72]
+	screen -- "screen clarity" [label=0.70]
+	screen -- "screen response" [label=0.69]
+	screen -- "screen resolution" [label=0.68]
+	"screen clarity"
+	"screen display"
+	"screen resolution"
+	"screen response"
+	"screen response" -- smooth [label=0.54]
+	"screen size"
+	"screen size" -- "user friendly" [label=0.60]
+	"size screen"
+	slim
+	smooth
+	smooth -- "very smooth" [label=0.83]
+	"speed performance"
+	stylish
+	stylish -- "very smooth" [label=0.64]
+	"twist for camera"
+	"user friendly"
+	"very smooth"
+	waterproof
+	weight
+}

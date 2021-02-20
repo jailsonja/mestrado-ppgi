@@ -1,0 +1,11 @@
+graph Final {
+	purchase
+	purchase -- value [label=0.47]
+	purchase -- toshiba [label=0.44]
+	toshiba
+	toshiba -- "toshiba laptop" [label=0.82]
+	toshiba -- "toshiba products" [label=0.73]
+	"toshiba laptop"
+	"toshiba products"
+	value
+}

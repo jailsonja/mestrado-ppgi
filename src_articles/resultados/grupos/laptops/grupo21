@@ -1,0 +1,7 @@
+graph Final {
+	lenovo
+	lenovo -- "process of purchasing" [label=0.41]
+	lenovo -- transition [label=0.39]
+	"process of purchasing"
+	transition
+}

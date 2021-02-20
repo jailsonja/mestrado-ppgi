@@ -1,0 +1,7 @@
+graph Final {
+	features
+	features -- weight [label=0.44]
+	"quailty photos"
+	"quailty photos" -- weight [label=0.50]
+	weight
+}

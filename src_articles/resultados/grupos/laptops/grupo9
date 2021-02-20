@@ -1,0 +1,51 @@
+graph Final {
+	"hard drive"
+	"hard drive" -- "hard drive space" [label=0.84]
+	"hard drive" -- specs [label=0.45]
+	"hard drive space"
+	"hard drive space" -- quick [label=0.51]
+	"hook up"
+	"hook up" -- "picture quality" [label=0.64]
+	"laptop specs"
+	"laptop specs" -- specs [label=0.80]
+	"loads programs"
+	"loads programs" -- programs [label=0.79]
+	mobile
+	mobile -- quick [label=0.46]
+	"mouse pad"
+	"mouse pad" -- quality [label=0.49]
+	performance
+	performance -- performances [label=0.80]
+	performance -- "screen resolution" [label=0.54]
+	performance -- programs [label=0.51]
+	performances
+	"picture quality"
+	"picture quality" -- quality [label=0.79]
+	pricepoint
+	pricepoint -- ram [label=0.42]
+	programs
+	programs -- "start programs" [label=0.80]
+	programs -- "quality of programs" [label=0.74]
+	programs -- ram [label=0.60]
+	programs -- startup [label=0.47]
+	quality
+	quality -- "quality of programs" [label=0.74]
+	"quality of programs"
+	quick
+	quick -- "turns off and on" [label=0.53]
+	quick -- "start programs" [label=0.48]
+	quick -- updates [label=0.45]
+	ram
+	resolution
+	resolution -- "screen resolution" [label=0.85]
+	response
+	response -- "screen resolution" [label=0.69]
+	"screen resolution"
+	specs
+	"start programs"
+	startup
+	startup -- "wi-fi" [label=0.45]
+	"turns off and on"
+	updates
+	"wi-fi"
+}

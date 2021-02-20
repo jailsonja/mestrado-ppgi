@@ -1,0 +1,7 @@
+graph Final {
+	connect
+	connect -- "user friendly" [label=0.39]
+	connect -- touchscreen [label=0.38]
+	touchscreen
+	"user friendly"
+}

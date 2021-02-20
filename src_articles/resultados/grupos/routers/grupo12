@@ -1,0 +1,15 @@
+graph Final {
+	plug
+	plug -- "plug in" [label=0.77]
+	plug -- "usb charging" [label=0.53]
+	plug -- start [label=0.37]
+	"plug in"
+	"plug in" -- "power plug orientation" [label=0.76]
+	"power plug"
+	"power plug" -- "power plug orientation" [label=0.84]
+	"power plug orientation"
+	start
+	"usb charging"
+	"usb charging" -- "usb charging ports" [label=0.90]
+	"usb charging ports"
+}

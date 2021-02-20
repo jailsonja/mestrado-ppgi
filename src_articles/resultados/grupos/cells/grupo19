@@ -1,0 +1,17 @@
+graph Final {
+	"feeling performance"
+	"feeling performance" -- performance [label=0.81]
+	performance
+	performance -- "speed performance" [label=0.83]
+	performance -- profile [label=0.55]
+	performance -- "screen size" [label=0.55]
+	profile
+	profile -- sleek [label=0.55]
+	"screen size"
+	sleek
+	sleek -- "sleek design" [label=0.78]
+	sleek -- "uploading pics straight to the cloud" [label=0.50]
+	"sleek design"
+	"speed performance"
+	"uploading pics straight to the cloud"
+}

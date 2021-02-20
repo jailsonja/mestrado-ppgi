@@ -1,0 +1,11 @@
+graph Final {
+	fit
+	fit -- tech [label=0.44]
+	shop
+	shop -- "toshiba laptop" [label=0.53]
+	shop -- tech [label=0.49]
+	tech
+	tech -- "touch sensitivity" [label=0.53]
+	"toshiba laptop"
+	"touch sensitivity"
+}

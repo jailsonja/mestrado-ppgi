@@ -1,0 +1,9 @@
+graph Final {
+	connection
+	connection -- "touch screen" [label=0.40]
+	"touch screen"
+	"touch screen" -- "use touch screen" [label=0.85]
+	"touch screen" -- "touch screen display" [label=0.83]
+	"touch screen display"
+	"use touch screen"
+}

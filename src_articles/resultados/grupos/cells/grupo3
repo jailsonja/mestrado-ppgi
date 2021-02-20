@@ -1,0 +1,39 @@
+graph Final {
+	"6s"
+	"6s" -- price [label=0.32]
+	moto
+	moto -- "moto mods" [label=0.79]
+	moto -- "moto phone" [label=0.71]
+	moto -- "moto-mods" [label=0.70]
+	moto -- "moto z force droid" [label=0.63]
+	moto -- "motorola software" [label=0.56]
+	moto -- "twist for camera" [label=0.43]
+	"moto mods"
+	"moto mods" -- "screen size" [label=0.47]
+	"moto phone"
+	"moto phone" -- thin [label=0.48]
+	"moto z force droid"
+	"moto-mods"
+	"motorola software"
+	performance
+	performance -- "speed performance" [label=0.83]
+	performance -- profile [label=0.55]
+	performance -- "screen size" [label=0.55]
+	"phone/data plan"
+	"phone/data plan" -- price [label=0.55]
+	price
+	price -- thin [label=0.37]
+	profile
+	"quick charge function"
+	"quick charge function" -- thin [label=0.45]
+	"removable battery"
+	"removable battery" -- thin [label=0.41]
+	"replaceable battery"
+	"replaceable battery" -- thin [label=0.43]
+	"screen size"
+	"speed performance"
+	thin
+	thin -- "thing of beauty" [label=0.52]
+	"thing of beauty"
+	"twist for camera"
+}

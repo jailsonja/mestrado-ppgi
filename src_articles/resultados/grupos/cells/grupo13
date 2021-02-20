@@ -1,0 +1,17 @@
+graph Final {
+	feature
+	feature -- "speaker features" [label=0.66]
+	feature -- "twist for camera" [label=0.53]
+	feature -- "use for older people" [label=0.52]
+	feature -- update [label=0.49]
+	feature -- "sound quality" [label=0.44]
+	feature -- weight [label=0.42]
+	"sound quality"
+	"sound quality" -- syncs [label=0.52]
+	"speaker features"
+	syncs
+	"twist for camera"
+	update
+	"use for older people"
+	weight
+}

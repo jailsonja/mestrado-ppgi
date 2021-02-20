@@ -1,0 +1,15 @@
+graph Final {
+	"ok google"
+	"ok google" -- waterproof [label=0.50]
+	quick
+	quick -- "quick charge function" [label=0.67]
+	quick -- "sound quality" [label=0.57]
+	"quick charge function"
+	"sound quality"
+	"sound quality" -- syncs [label=0.52]
+	syncs
+	syncs -- works [label=0.49]
+	waterproof
+	waterproof -- works [label=0.44]
+	works
+}

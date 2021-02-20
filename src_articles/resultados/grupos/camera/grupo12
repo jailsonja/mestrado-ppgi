@@ -1,0 +1,7 @@
+graph Final {
+	feel
+	feel -- weight [label=0.50]
+	"quailty photos"
+	"quailty photos" -- weight [label=0.50]
+	weight
+}

@@ -1,0 +1,11 @@
+graph Final {
+	"color gold"
+	"color gold" -- design [label=0.53]
+	design
+	design -- specs [label=0.50]
+	design -- software [label=0.44]
+	software
+	software -- "user friendly" [label=0.55]
+	specs
+	"user friendly"
+}

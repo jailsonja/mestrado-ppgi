@@ -1,0 +1,23 @@
+graph Final {
+	durability
+	durability -- performance [label=0.57]
+	ergonomics
+	ergonomics -- size [label=0.46]
+	hold
+	hold -- "zoom lens" [label=0.48]
+	hold -- size [label=0.39]
+	performance
+	performance -- "photo performance" [label=0.79]
+	performance -- "tutorial online" [label=0.55]
+	"photo performance"
+	"photo performance" -- size [label=0.52]
+	pincture
+	pincture -- "zoom lenses" [label=0.52]
+	size
+	size -- "small pocket size" [label=0.69]
+	"small pocket size"
+	"tutorial online"
+	"zoom lens"
+	"zoom lens" -- "zoom lenses" [label=0.92]
+	"zoom lenses"
+}

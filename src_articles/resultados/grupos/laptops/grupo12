@@ -1,0 +1,33 @@
+graph Final {
+	"11 size"
+	"11 size" -- macbook [label=0.39]
+	macbook
+	macbook -- processor [label=0.44]
+	macbook -- startup [label=0.41]
+	macbook -- performance [label=0.37]
+	performance
+	performance -- performances [label=0.80]
+	performance -- "screen resolution" [label=0.54]
+	performances
+	process
+	process -- processing [label=0.79]
+	process -- processor [label=0.78]
+	process -- "process of purchasing" [label=0.71]
+	"process of purchasing"
+	processing
+	processing -- "processing speed" [label=0.88]
+	"processing speed"
+	"processing speed" -- speed [label=0.73]
+	processor
+	resolution
+	resolution -- "screen resolution" [label=0.85]
+	response
+	response -- "screen resolution" [label=0.69]
+	"screen resolution"
+	simplicity
+	simplicity -- speed [label=0.53]
+	speed
+	startup
+	startup -- "wi-fi" [label=0.45]
+	"wi-fi"
+}

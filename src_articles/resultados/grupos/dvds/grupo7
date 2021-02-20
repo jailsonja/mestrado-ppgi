@@ -1,0 +1,7 @@
+graph Final {
+	"dvd player"
+	"dvd player" -- "sony dvd player" [label=0.74]
+	"dvd player" -- sound [label=0.34]
+	"sony dvd player"
+	sound
+}

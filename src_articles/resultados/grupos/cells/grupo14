@@ -1,0 +1,15 @@
+graph Final {
+	features
+	features -- "speaker features" [label=0.70]
+	features -- "twist for camera" [label=0.52]
+	features -- update [label=0.47]
+	features -- "sound quality" [label=0.46]
+	features -- weight [label=0.43]
+	"sound quality"
+	"sound quality" -- syncs [label=0.52]
+	"speaker features"
+	syncs
+	"twist for camera"
+	update
+	weight
+}

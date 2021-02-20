@@ -1,0 +1,9 @@
+graph Final {
+	quality
+	quality -- "quality of signal" [label=0.76]
+	"quality of signal"
+	"quality of signal" -- signal [label=0.65]
+	signal
+	signal -- start [label=0.41]
+	start
+}

@@ -1,0 +1,7 @@
+graph Final {
+	remote
+	remote -- "remote control" [label=0.76]
+	remote -- "remote graphics" [label=0.72]
+	"remote control"
+	"remote graphics"
+}

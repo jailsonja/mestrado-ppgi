@@ -1,0 +1,9 @@
+graph Final {
+	service
+	service -- "service from sales" [label=0.73]
+	service -- "service at best buy" [label=0.71]
+	service -- "service from the salesperson" [label=0.68]
+	"service at best buy"
+	"service from sales"
+	"service from the salesperson"
+}

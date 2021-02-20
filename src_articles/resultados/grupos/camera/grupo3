@@ -1,0 +1,25 @@
+graph Final {
+	item
+	item -- photos [label=0.38]
+	photos
+	photos -- "quailty photos" [label=0.69]
+	photos -- "quality of the photos" [label=0.62]
+	photos -- pics [label=0.50]
+	photos -- "small pocket size" [label=0.50]
+	photos -- video [label=0.44]
+	pics
+	pics -- "quality pics" [label=0.71]
+	"quailty photos"
+	"quality of the photos"
+	"quality pics"
+	"quality video"
+	"quality video" -- video [label=0.71]
+	"small pocket size"
+	stabilization
+	stabilization -- video [label=0.47]
+	"travel photography"
+	"travel photography" -- video [label=0.52]
+	video
+	video -- "video option" [label=0.72]
+	"video option"
+}

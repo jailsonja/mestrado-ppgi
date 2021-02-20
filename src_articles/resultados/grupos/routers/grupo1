@@ -1,0 +1,19 @@
+graph Final {
+	connectivity
+	connectivity -- "software/app" [label=0.58]
+	graphics
+	graphics -- use [label=0.40]
+	"internet speeds"
+	"internet speeds" -- speeds [label=0.76]
+	"internet speeds" -- use [label=0.43]
+	product
+	product -- use [label=0.40]
+	reception
+	reception -- use [label=0.35]
+	"software/app"
+	"software/app" -- use [label=0.48]
+	speeds
+	speeds -- "transfer speeds" [label=0.76]
+	"transfer speeds"
+	use
+}

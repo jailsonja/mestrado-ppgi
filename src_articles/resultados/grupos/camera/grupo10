@@ -1,0 +1,15 @@
+graph Final {
+	"instant prints"
+	"instant prints" -- prints [label=0.81]
+	print
+	print -- prints [label=0.84]
+	print -- "print outs" [label=0.77]
+	print -- versatility [label=0.51]
+	print -- quick [label=0.43]
+	"print outs"
+	prints
+	quick
+	quick -- shipping [label=0.52]
+	shipping
+	versatility
+}

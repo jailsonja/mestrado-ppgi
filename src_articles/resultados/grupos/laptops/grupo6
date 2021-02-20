@@ -1,0 +1,25 @@
+graph Final {
+	fast
+	fast -- "super fast" [label=0.71]
+	fast -- "loads programs" [label=0.48]
+	fast -- weight [label=0.37]
+	"loads programs"
+	storage
+	storage -- "storage space" [label=0.82]
+	storage -- "super fast" [label=0.52]
+	"storage space"
+	"super fast"
+	"super fast" -- works [label=0.41]
+	transport
+	transport -- weight [label=0.45]
+	"user friendly"
+	"user friendly" -- "windows 8" [label=0.50]
+	weight
+	"windows 8"
+	"windows 8" -- "windows 8.1" [label=0.82]
+	"windows 8" -- "windows 8 problems" [label=0.79]
+	"windows 8" -- works [label=0.48]
+	"windows 8 problems"
+	"windows 8.1"
+	works
+}

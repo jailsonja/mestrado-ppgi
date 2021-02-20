@@ -1,0 +1,11 @@
+graph Final {
+	display
+	display -- "touch display" [label=0.84]
+	display -- startup [label=0.49]
+	startup
+	startup -- "wi-fi" [label=0.45]
+	"touch display"
+	"touch display" -- windows10 [label=0.51]
+	"wi-fi"
+	windows10
+}

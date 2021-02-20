@@ -1,0 +1,31 @@
+graph Final {
+	"macbook air"
+	"macbook air" -- processor [label=0.43]
+	memory
+	memory -- processor [label=0.51]
+	memory -- setup [label=0.44]
+	memory -- specs [label=0.44]
+	process
+	process -- processing [label=0.79]
+	process -- processor [label=0.78]
+	process -- "process of purchasing" [label=0.71]
+	process -- shop [label=0.41]
+	"process of purchasing"
+	processing
+	processing -- "processing speed" [label=0.88]
+	"processing speed"
+	"processing speed" -- speed [label=0.73]
+	processor
+	setup
+	shop
+	shop -- "toshiba laptop" [label=0.53]
+	shop -- tech [label=0.49]
+	simplicity
+	simplicity -- speed [label=0.53]
+	specs
+	speed
+	tech
+	tech -- "touch sensitivity" [label=0.53]
+	"toshiba laptop"
+	"touch sensitivity"
+}

@@ -1,0 +1,9 @@
+graph Final {
+	htc
+	htc -- radio [label=0.40]
+	htc -- slim [label=0.39]
+	htc -- responsive [label=0.34]
+	radio
+	responsive
+	slim
+}

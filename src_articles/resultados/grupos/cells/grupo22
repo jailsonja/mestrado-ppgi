@@ -1,0 +1,7 @@
+graph Final {
+	memory
+	memory -- processor [label=0.59]
+	memory -- "vr alone" [label=0.52]
+	processor
+	"vr alone"
+}

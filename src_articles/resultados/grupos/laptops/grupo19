@@ -1,0 +1,15 @@
+graph Final {
+	ease
+	ease -- "transferring my apps and files" [label=0.56]
+	ease -- transition [label=0.50]
+	ease -- speed [label=0.49]
+	ease -- touchscreen [label=0.43]
+	speed
+	touchpad
+	touchpad -- "touchscreen features" [label=0.69]
+	touchscreen
+	touchscreen -- "touchscreen features" [label=0.82]
+	"touchscreen features"
+	"transferring my apps and files"
+	transition
+}

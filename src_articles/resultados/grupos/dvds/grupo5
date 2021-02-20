@@ -1,0 +1,27 @@
+graph Final {
+	operationality
+	operationality -- setup [label=0.44]
+	"plays videos"
+	"plays videos" -- video [label=0.72]
+	product
+	product -- products [label=0.83]
+	product -- "sony product" [label=0.71]
+	products
+	products -- purchase [label=0.58]
+	purchase
+	purchase -- video [label=0.36]
+	setup
+	setup -- "setup process" [label=0.76]
+	setup -- "sony dvd player" [label=0.52]
+	"setup process"
+	sony
+	sony -- "sony dvd player" [label=0.73]
+	sony -- "sony product" [label=0.72]
+	sony -- "sony quality" [label=0.72]
+	sony -- "sony customer service group" [label=0.60]
+	"sony customer service group"
+	"sony dvd player"
+	"sony product"
+	"sony quality"
+	video
+}

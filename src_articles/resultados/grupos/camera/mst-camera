@@ -1,0 +1,309 @@
+graph Final {
+	"4 k video"
+	"4 k video" -- video [label=0.72]
+	"4k video"
+	"4k video" -- video [label=0.80]
+	"4k video" -- "face tracking" [label=0.53]
+	"4x digital zoom"
+	"4x digital zoom" -- zoom [label=0.72]
+	"ability to perform in low light"
+	"ability to perform in low light" -- light [label=0.59]
+	accessories
+	accessories -- camera [label=0.42]
+	autofocus
+	autofocus -- focus [label=0.68]
+	autofocus -- quick [label=0.53]
+	bag
+	bag -- extras [label=0.59]
+	"battery case"
+	"battery case" -- case [label=0.73]
+	"battery life"
+	"battery life" -- "wi-fi feature" [label=0.52]
+	"battery life" -- viewfinder [label=0.49]
+	big
+	big -- weighs [label=0.59]
+	big -- "wifi app" [label=0.53]
+	body
+	body -- small [label=0.42]
+	"build quality"
+	"build quality" -- quality [label=0.71]
+	cam
+	cam -- camera [label=0.78]
+	cam -- camcorder [label=0.48]
+	camara
+	camara -- "camara instantanea" [label=0.82]
+	camara -- "camara package" [label=0.77]
+	"camara instantanea"
+	"camara package"
+	"camara package" -- "zoom lenses" [label=0.61]
+	"camara package" -- pincture [label=0.56]
+	camcorder
+	camcorder -- cartridges [label=0.21]
+	camera
+	camera -- cameras [label=0.72]
+	camera -- "dslr camera" [label=0.67]
+	camera -- "first camera" [label=0.66]
+	camera -- "sony camera" [label=0.65]
+	camera -- "digital camera" [label=0.64]
+	camera -- "instant camera" [label=0.64]
+	camera -- "compact camera" [label=0.63]
+	camera -- "little camera." [label=0.62]
+	camera -- "instant picture camera" [label=0.58]
+	camera -- extras [label=0.47]
+	cameras
+	cameras -- polaroid [label=0.49]
+	cameras -- lx100 [label=0.37]
+	"capture quick moments"
+	"capture quick moments" -- quick [label=0.69]
+	carry
+	carry -- case [label=0.53]
+	carry -- "dslr camera" [label=0.52]
+	cartridges
+	case
+	case -- deal [label=0.50]
+	color
+	color -- colors [label=0.90]
+	colors
+	colors -- "quality of colors" [label=0.77]
+	compact
+	compact -- "compact camera" [label=0.81]
+	compact -- "compact point" [label=0.78]
+	compact -- versatility [label=0.53]
+	"compact camera"
+	"compact point"
+	controls
+	controls -- "separate controls" [label=0.81]
+	controls -- convenient [label=0.61]
+	controls -- using [label=0.47]
+	convenient
+	"cost of the film"
+	"cost of the film" -- film [label=0.63]
+	"craft work"
+	"craft work" -- work [label=0.71]
+	cute
+	cute -- picture [label=0.48]
+	deal
+	device
+	device -- using [label=0.57]
+	device -- features [label=0.53]
+	device -- flash [label=0.51]
+	"digital camera"
+	"digital pics"
+	"digital pics" -- pics [label=0.68]
+	disappointed
+	disappointed -- "quality of the pictures on the screen" [label=0.57]
+	"dslr camera"
+	"dslr features"
+	"dslr features" -- features [label=0.75]
+	"dslr features" -- lightweight [label=0.60]
+	durability
+	durability -- performance [label=0.57]
+	durable
+	durable -- "quality of the pictures on the screen" [label=0.57]
+	ergonomics
+	ergonomics -- size [label=0.46]
+	"exposure setting"
+	"exposure setting" -- "pictures in low light" [label=0.25]
+	extras
+	"f/1.7"
+	"f/1.7" -- "leica lens" [label=0.46]
+	"face tracking"
+	"face tracking" -- stabilization [label=0.64]
+	features
+	features -- "plenty of features" [label=0.73]
+	features -- "night time images" [label=0.55]
+	features -- learn [label=0.47]
+	feel
+	feel -- "piece of equipment" [label=0.59]
+	film
+	film -- "put film" [label=0.75]
+	film -- "price on film" [label=0.65]
+	film -- "fuji film instant camera" [label=0.60]
+	"first camera"
+	"first camera" -- operation [label=0.60]
+	flash
+	flash -- hold [label=0.51]
+	focus
+	focus -- "sony camera" [label=0.56]
+	focus -- use [label=0.49]
+	"fuji film instant camera"
+	"fuji film instant camera" -- "instant camera" [label=0.82]
+	"fuji film instant camera" -- "take with you" [label=0.62]
+	gatherings
+	gatherings -- scrapbooks [label=0.62]
+	gatherings -- memories [label=0.59]
+	gift
+	gift -- product [label=0.43]
+	hold
+	"image quality"
+	"image quality" -- quality [label=0.71]
+	"instant camera"
+	"instant picture"
+	"instant picture" -- "instant picture camera" [label=0.84]
+	"instant picture" -- picture [label=0.69]
+	"instant picture" -- "picture suddenly appears" [label=0.68]
+	"instant picture camera"
+	"instant prints"
+	"instant prints" -- prints [label=0.81]
+	instructional
+	instructional -- "video option" [label=0.19]
+	"intelligent auto"
+	"intelligent auto" -- using [label=0.56]
+	"intelligent options"
+	"intelligent options" -- "variety of scene options" [label=0.80]
+	"intelligent options" -- options [label=0.73]
+	"intelligent options" -- investment [label=0.20]
+	investment
+	item
+	item -- price [label=0.53]
+	"jpg stores"
+	"jpg stores" -- pictures [label=0.26]
+	"lack of zoom"
+	"lack of zoom" -- zoom [label=0.70]
+	learn
+	learn -- "wi-fi feature" [label=0.56]
+	learn -- options [label=0.45]
+	"leica lens"
+	"leica lens" -- lens [label=0.73]
+	lens
+	lens -- lenses [label=0.84]
+	lens -- weighs [label=0.51]
+	lenses
+	lenses -- "zoom lenses" [label=0.84]
+	lenses -- "olympus prime lenses" [label=0.72]
+	lenses -- "plenty of features" [label=0.58]
+	light
+	light -- "pictures in low light" [label=0.66]
+	light -- lightweight [label=0.63]
+	lightweight
+	lightweight -- weight [label=0.73]
+	"little camera."
+	lx100
+	memories
+	memories -- pictures [label=0.45]
+	"menu text"
+	"menu text" -- use [label=0.45]
+	"night pictures"
+	"night pictures" -- pictures [label=0.70]
+	"night time images"
+	"olympus prime lenses"
+	operate
+	operate -- operation [label=0.35]
+	operation
+	options
+	performance
+	performance -- "photo performance" [label=0.79]
+	performance -- "tutorial online" [label=0.55]
+	performed
+	performed -- product [label=0.56]
+	"photo performance"
+	"photo performance" -- size [label=0.52]
+	photos
+	photos -- "quailty photos" [label=0.69]
+	photos -- "quality of the photos" [label=0.62]
+	pics
+	pics -- "takes pics" [label=0.72]
+	pics -- "quality pics" [label=0.71]
+	picture
+	picture -- pictures [label=0.90]
+	"picture quality"
+	"picture quality" -- quality [label=0.74]
+	"picture suddenly appears"
+	pictures
+	pictures -- "quality pictures" [label=0.71]
+	"pictures in low light"
+	"pictures in low light" -- "quality of colors" [label=0.69]
+	"piece of equipment"
+	"piece of equipment" -- weight [label=0.57]
+	pincture
+	plays
+	plays -- works [label=0.54]
+	"plenty of features"
+	polaroid
+	powerful
+	powerful -- small [label=0.50]
+	price
+	price -- "price on film" [label=0.65]
+	price -- purchase [label=0.53]
+	price -- product [label=0.52]
+	price -- value [label=0.49]
+	"price on film"
+	print
+	print -- prints [label=0.84]
+	print -- "print outs" [label=0.77]
+	print -- versatility [label=0.51]
+	"print outs"
+	prints
+	product
+	purchase
+	purchase -- shipping [label=0.55]
+	"put film"
+	"quailty photos"
+	quality
+	quality -- "quality pics" [label=0.72]
+	quality -- "quality pictures" [label=0.72]
+	quality -- "quality video" [label=0.71]
+	quality -- "video quality" [label=0.71]
+	quality -- "quality of colors" [label=0.68]
+	quality -- "quality of pictures" [label=0.66]
+	quality -- "quality of the picture" [label=0.66]
+	quality -- "quality of the photos" [label=0.64]
+	"quality of colors"
+	"quality of pictures"
+	"quality of the photos"
+	"quality of the picture"
+	"quality of the picture" -- "quality of the pictures on the screen" [label=0.87]
+	"quality of the picture" -- "watching the pic develop" [label=0.30]
+	"quality of the pictures on the screen"
+	"quality pics"
+	"quality pictures"
+	"quality video"
+	"quality video" -- video [label=0.71]
+	quick
+	scrapbooks
+	"separate controls"
+	shipping
+	size
+	size -- "small pocket size" [label=0.69]
+	size -- versatility [label=0.51]
+	small
+	small -- "small pocket size" [label=0.68]
+	"small pocket size"
+	"sony camera"
+	stabilization
+	"take with you"
+	"takes pics"
+	"travel photography"
+	"travel photography" -- video [label=0.52]
+	"tutorial online"
+	use
+	use -- "user guide" [label=0.54]
+	"user guide"
+	using
+	using -- works [label=0.47]
+	value
+	"variety of scene options"
+	versatility
+	video
+	video -- "video dslr" [label=0.72]
+	video -- "video option" [label=0.72]
+	video -- "video capability" [label=0.69]
+	"video capability"
+	"video dslr"
+	"video option"
+	"video quality"
+	viewfinder
+	"watching the pic develop"
+	weighs
+	weight
+	"wi-fi feature"
+	"wifi app"
+	work
+	work -- works [label=0.87]
+	works
+	zoom
+	zoom -- "zoom lens" [label=0.84]
+	"zoom lens"
+	"zoom lens" -- "zoom lenses" [label=0.92]
+	"zoom lenses"
+}

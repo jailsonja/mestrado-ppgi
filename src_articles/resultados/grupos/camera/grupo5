@@ -1,0 +1,19 @@
+graph Final {
+	lens
+	lens -- "zoom lens" [label=0.79]
+	lens -- "plenty of features" [label=0.53]
+	lens -- weighs [label=0.51]
+	pincture
+	pincture -- "zoom lenses" [label=0.52]
+	"plenty of features"
+	purchase
+	purchase -- shipping [label=0.55]
+	purchase -- "zoom lenses" [label=0.44]
+	quick
+	quick -- shipping [label=0.52]
+	shipping
+	weighs
+	"zoom lens"
+	"zoom lens" -- "zoom lenses" [label=0.92]
+	"zoom lenses"
+}

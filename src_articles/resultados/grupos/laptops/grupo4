@@ -1,0 +1,61 @@
+graph Final {
+	"loads programs"
+	"loads programs" -- programs [label=0.79]
+	longevity
+	longevity -- salesman [label=0.56]
+	looks
+	looks -- "touch display" [label=0.52]
+	looks -- setup [label=0.51]
+	looks -- runs [label=0.50]
+	mobile
+	mobile -- "touch screen" [label=0.51]
+	mobile -- quick [label=0.46]
+	"physical keyboard"
+	"physical keyboard" -- runs [label=0.48]
+	programs
+	programs -- "start programs" [label=0.80]
+	programs -- "quality of programs" [label=0.74]
+	programs -- startup [label=0.47]
+	programs -- runs [label=0.45]
+	"quality of programs"
+	quick
+	quick -- "turns off and on" [label=0.53]
+	quick -- "start programs" [label=0.48]
+	ran
+	ran -- transition [label=0.54]
+	ran -- transport [label=0.50]
+	ran -- salesman [label=0.48]
+	ran -- "transferring my apps and files" [label=0.48]
+	ran -- resolution [label=0.40]
+	resolution
+	resolution -- "screen resolution" [label=0.85]
+	resolution -- "touch screen" [label=0.49]
+	response
+	response -- "screen resolution" [label=0.69]
+	runs
+	runs -- "runs games" [label=0.72]
+	runs -- "runs all my games" [label=0.65]
+	"runs all my games"
+	"runs games"
+	salesman
+	"school work"
+	"school work" -- "touch screen" [label=0.46]
+	"screen resolution"
+	setup
+	"start programs"
+	startup
+	startup -- "wi-fi" [label=0.45]
+	"touch display"
+	"touch display" -- windows10 [label=0.51]
+	"touch scree"
+	"touch scree" -- "touch screen" [label=0.91]
+	"touch screen"
+	"touch screen" -- "touch screen features" [label=0.78]
+	"touch screen features"
+	"transferring my apps and files"
+	transition
+	transport
+	"turns off and on"
+	"wi-fi"
+	windows10
+}

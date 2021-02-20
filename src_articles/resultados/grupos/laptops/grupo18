@@ -1,0 +1,17 @@
+graph Final {
+	graphics
+	graphics -- "intel core processors" [label=0.58]
+	graphics -- setup [label=0.46]
+	graphics -- "school work" [label=0.42]
+	"intel core processors"
+	"intel core processors" -- storage [label=0.57]
+	"school work"
+	setup
+	storage
+	storage -- "storage space" [label=0.82]
+	storage -- "super fast" [label=0.52]
+	storage -- wifi [label=0.42]
+	"storage space"
+	"super fast"
+	wifi
+}

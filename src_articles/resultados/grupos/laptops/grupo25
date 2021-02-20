@@ -1,0 +1,9 @@
+graph Final {
+	laptops
+	laptops -- "toshiba laptop" [label=0.66]
+	laptops -- pricey [label=0.52]
+	laptops -- sturdy [label=0.43]
+	pricey
+	sturdy
+	"toshiba laptop"
+}

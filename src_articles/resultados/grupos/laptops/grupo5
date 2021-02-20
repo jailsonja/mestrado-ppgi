@@ -1,0 +1,43 @@
+graph Final {
+	"apple product"
+	"apple product" -- "user friendly" [label=0.45]
+	applications
+	applications -- "get around" [label=0.53]
+	applications -- machine [label=0.47]
+	"get around"
+	"get around" -- windows [label=0.49]
+	"laser printer"
+	"laser printer" -- "windows 8 problems" [label=0.66]
+	looks
+	looks -- "touch display" [label=0.52]
+	looks -- runs [label=0.50]
+	machine
+	machine -- processing [label=0.53]
+	machine -- "spreaders sheets" [label=0.52]
+	"physical keyboard"
+	"physical keyboard" -- runs [label=0.48]
+	presentations
+	presentations -- "spreaders sheets" [label=0.63]
+	processing
+	processing -- "processing speed" [label=0.88]
+	"processing speed"
+	runs
+	runs -- "runs games" [label=0.72]
+	runs -- "runs all my games" [label=0.65]
+	"runs all my games"
+	"runs games"
+	"spreaders sheets"
+	"touch display"
+	"touch display" -- windows10 [label=0.51]
+	"user friendly"
+	"user friendly" -- "windows 8" [label=0.50]
+	windows
+	windows -- "windows 10" [label=0.85]
+	windows -- "windows 8" [label=0.83]
+	windows -- windows10 [label=0.56]
+	"windows 10"
+	"windows 8"
+	"windows 8" -- "windows 8 problems" [label=0.79]
+	"windows 8 problems"
+	windows10
+}

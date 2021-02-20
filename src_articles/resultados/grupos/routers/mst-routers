@@ -1,0 +1,273 @@
+graph Final {
+	"5ghz"
+	"5ghz" -- "5ghz range" [label=0.75]
+	"5ghz range"
+	"5ghz range" -- range [label=0.65]
+	"802.11 ac"
+	"802.11 ac" -- "gigabit switch" [label=0.18]
+	"ability to expand my internet connections"
+	"ability to expand my internet connections" -- connections [label=0.69]
+	accessories
+	accessories -- inexpensive [label=0.20]
+	adapter
+	adapter -- small [label=0.50]
+	"air port"
+	"air port" -- "air port extreme" [label=0.86]
+	"air port" -- works [label=0.43]
+	"air port extreme"
+	antennas
+	antennas -- attach [label=0.56]
+	antennas -- signal [label=0.46]
+	antennas -- cables [label=0.23]
+	attach
+	brand
+	brand -- "build quality" [label=0.63]
+	brand -- expensive [label=0.51]
+	"build quality"
+	"build quality" -- quality [label=0.80]
+	buy
+	buy -- inexpensive [label=0.53]
+	cables
+	card
+	card -- "open port" [label=0.55]
+	card -- purchase [label=0.50]
+	choice
+	choice -- price [label=0.24]
+	compact
+	compact -- touchscreen [label=0.56]
+	compact -- small [label=0.55]
+	configure
+	configure -- security [label=0.59]
+	connect
+	connect -- connection [label=0.79]
+	connect -- connectivity [label=0.67]
+	connection
+	connection -- connections [label=0.86]
+	connections
+	connections -- "wireless router" [label=0.49]
+	connectivity
+	connectivity -- "software/app" [label=0.58]
+	cost
+	cost -- looks [label=0.57]
+	cost -- product [label=0.54]
+	cost -- performance [label=0.53]
+	coverage
+	coverage -- device [label=0.39]
+	deal
+	deal -- price [label=0.51]
+	deal -- "wifi extender" [label=0.51]
+	delivered
+	delivered -- quick [label=0.54]
+	design
+	design -- "secure management" [label=0.64]
+	device
+	device -- priced [label=0.52]
+	device -- performes [label=0.38]
+	display
+	display -- "touch screen display" [label=0.79]
+	display -- graphics [label=0.60]
+	"download newest firmware"
+	"download newest firmware" -- firmware [label=0.74]
+	expensive
+	expensive -- inexpensive [label=0.86]
+	expensive -- performs [label=0.56]
+	"extend signal"
+	"extend signal" -- signal [label=0.70]
+	"extended range"
+	"extended range" -- range [label=0.69]
+	"extended range" -- extender [label=0.57]
+	extender
+	extender -- "wifi extender" [label=0.78]
+	"extends range"
+	"extends range" -- range [label=0.68]
+	extention
+	extention -- wifi [label=0.43]
+	fast
+	fast -- "set-up" [label=0.51]
+	fast -- inexpensive [label=0.50]
+	feature
+	feature -- "security features" [label=0.70]
+	feature -- "firmware features" [label=0.69]
+	feature -- touchscreen [label=0.52]
+	feature -- "port 1" [label=0.49]
+	firmware
+	firmware -- "firmware features" [label=0.79]
+	"firmware features"
+	functionality
+	functionality -- setup [label=0.50]
+	gain
+	gain -- stable [label=0.52]
+	"gigabit switch"
+	"gigabit switch" -- switch [label=0.71]
+	"gigabyte speeds"
+	"gigabyte speeds" -- speeds [label=0.75]
+	"gigabyte speeds" -- "wireless router" [label=0.57]
+	"gigabyte speeds" -- setup [label=0.49]
+	graphics
+	gss108e
+	gss108e -- operate [label=0.50]
+	"hook up"
+	"hook up" -- install [label=0.38]
+	hookup
+	hookup -- range [label=0.34]
+	inexpensive
+	inexpensive -- secure [label=0.53]
+	install
+	install -- installation [label=0.76]
+	install -- stable [label=0.53]
+	install -- "wifi strength" [label=0.51]
+	installation
+	installation -- instructions [label=0.64]
+	instructions
+	instructions -- support [label=0.45]
+	"internet speeds"
+	"internet speeds" -- speeds [label=0.76]
+	item
+	item -- price [label=0.48]
+	logging
+	logging -- security [label=0.50]
+	looks
+	looks -- "touch screen" [label=0.52]
+	maintain
+	maintain -- secure [label=0.55]
+	"management software"
+	"management software" -- software [label=0.77]
+	netgear
+	netgear -- "netgear switch" [label=0.76]
+	netgear -- "netgear genie" [label=0.75]
+	netgear -- "wireless router" [label=0.54]
+	"netgear genie"
+	"netgear switch"
+	"netgear switch" -- switch [label=0.71]
+	"network set-up"
+	"network set-up" -- "set-up" [label=0.80]
+	"open port"
+	"open port" -- secure [label=0.59]
+	operate
+	operate -- range [label=0.53]
+	package
+	package -- small [label=0.51]
+	performance
+	performes
+	performs
+	"piece of junk"
+	"piece of junk" -- working [label=0.49]
+	plug
+	plug -- "plug in" [label=0.77]
+	plug -- "usb charging" [label=0.53]
+	plug -- running [label=0.47]
+	"plug in"
+	"plug in" -- "power plug orientation" [label=0.76]
+	"plug in" -- "set up" [label=0.47]
+	poe
+	poe -- "port 1" [label=0.63]
+	"port 1"
+	"power plug"
+	"power plug" -- "power plug orientation" [label=0.84]
+	"power plug" -- switch [label=0.51]
+	"power plug orientation"
+	price
+	price -- priced [label=0.76]
+	price -- "sale price" [label=0.75]
+	price -- value [label=0.50]
+	priced
+	product
+	programs
+	programs -- "usb ports" [label=0.58]
+	programs -- slow [label=0.53]
+	protect
+	protect -- router [label=0.50]
+	purchase
+	purchase -- use [label=0.51]
+	quality
+	quality -- "quality of signal" [label=0.76]
+	"quality of signal"
+	"quality of signal" -- signal [label=0.65]
+	"quality of signal" -- range [label=0.51]
+	quick
+	quick -- start [label=0.48]
+	quiet
+	quiet -- support [label=0.49]
+	quite
+	quite -- working [label=0.46]
+	range
+	reception
+	reception -- "set up" [label=0.44]
+	router
+	router -- "wireless router" [label=0.71]
+	running
+	"sale price"
+	secure
+	secure -- "secure management" [label=0.74]
+	secure -- security [label=0.64]
+	"secure management"
+	security
+	security -- "security features" [label=0.76]
+	security -- "security management" [label=0.76]
+	"security features"
+	"security management"
+	"security management" -- "technical people" [label=0.22]
+	"set up"
+	"set up" -- start [label=0.50]
+	"set up" -- "setting it up" [label=0.37]
+	"set-up"
+	"set-up" -- "st-up" [label=0.41]
+	"setting it up"
+	setup
+	signal
+	signal -- slow [label=0.43]
+	size
+	size -- speed [label=0.52]
+	size -- small [label=0.51]
+	slow
+	small
+	small -- "small business" [label=0.73]
+	small -- space [label=0.54]
+	"small business"
+	software
+	software -- "software/app" [label=0.80]
+	software -- "update software" [label=0.79]
+	software -- "software genie" [label=0.78]
+	"software genie"
+	"software/app"
+	space
+	speed
+	speed -- speeds [label=0.90]
+	speeds
+	speeds -- "transfer speeds" [label=0.76]
+	"st-up"
+	stable
+	start
+	start -- working [label=0.48]
+	support
+	switch
+	"technical people"
+	"touch screen"
+	"touch screen" -- "use touch screen" [label=0.85]
+	"touch screen" -- "touch screen display" [label=0.83]
+	"touch screen display"
+	"touch screen display" -- worked [label=0.51]
+	touchscreen
+	"transfer speeds"
+	"update software"
+	"usb charging"
+	"usb charging" -- "usb charging ports" [label=0.90]
+	"usb charging ports"
+	"usb ports"
+	use
+	use -- "use touch screen" [label=0.56]
+	use -- "user friendly" [label=0.54]
+	"use touch screen"
+	"user friendly"
+	value
+	wifi
+	wifi -- "wifi extender" [label=0.68]
+	wifi -- "wifi strength" [label=0.65]
+	"wifi extender"
+	"wifi strength"
+	"wireless router"
+	worked
+	worked -- works [label=0.54]
+	working
+	works
+}

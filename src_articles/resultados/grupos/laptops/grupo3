@@ -1,0 +1,55 @@
+graph Final {
+	"flash storage"
+	"flash storage" -- "intel core processors" [label=0.67]
+	"graphics card"
+	"graphics card" -- processor [label=0.59]
+	"graphics card" -- use [label=0.39]
+	"i -7 processor"
+	"i -7 processor" -- processor [label=0.77]
+	"intel core processors"
+	"intel core processors" -- processor [label=0.74]
+	keyboards
+	keyboards -- screens [label=0.60]
+	"learning curve"
+	"learning curve" -- use [label=0.40]
+	"lenovo edge"
+	"lenovo edge" -- use [label=0.34]
+	looks
+	looks -- "touch display" [label=0.52]
+	looks -- use [label=0.36]
+	"mac book"
+	"mac book" -- use [label=0.35]
+	"mouse pad"
+	"mouse pad" -- use [label=0.53]
+	noiseless
+	noiseless -- "set up" [label=0.47]
+	"not big"
+	"not big" -- "not heavy" [label=0.76]
+	"not big" -- notebooks [label=0.60]
+	"not heavy"
+	"not heavy" -- use [label=0.46]
+	notebooks
+	"other uses"
+	"other uses" -- use [label=0.61]
+	"presentation creation"
+	"presentation creation" -- use [label=0.43]
+	processor
+	screens
+	screens -- use [label=0.42]
+	"set up"
+	"set up" -- use [label=0.49]
+	specs
+	specs -- use [label=0.47]
+	staff
+	staff -- use [label=0.41]
+	"touch display"
+	"touch display" -- windows10 [label=0.51]
+	transition
+	transition -- use [label=0.37]
+	"turns on/off"
+	"turns on/off" -- use [label=0.47]
+	use
+	use -- "user friendly" [label=0.54]
+	"user friendly"
+	windows10
+}

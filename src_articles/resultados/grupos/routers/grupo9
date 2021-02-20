@@ -1,0 +1,21 @@
+graph Final {
+	functionality
+	functionality -- setup [label=0.50]
+	gain
+	gain -- setup [label=0.36]
+	"gigabyte speeds"
+	"gigabyte speeds" -- speeds [label=0.75]
+	"gigabyte speeds" -- setup [label=0.49]
+	"internet speeds"
+	"internet speeds" -- speeds [label=0.76]
+	quick
+	quick -- start [label=0.48]
+	setup
+	setup -- "user friendly" [label=0.46]
+	speeds
+	speeds -- "transfer speeds" [label=0.76]
+	speeds -- start [label=0.45]
+	start
+	"transfer speeds"
+	"user friendly"
+}

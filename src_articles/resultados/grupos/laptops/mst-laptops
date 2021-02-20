@@ -1,0 +1,519 @@
+graph Final {
+	"11 size"
+	"11 size" -- size [label=0.75]
+	"128 gig storage"
+	"128 gig storage" -- storage [label=0.75]
+	17
+	17 -- screen [label=0.37]
+	"256gb"
+	"256gb" -- small [label=0.39]
+	"500gb hard disk"
+	"500gb hard disk" -- "storage space" [label=0.65]
+	adapters
+	adapters -- expensive [label=0.60]
+	"amount of usb available"
+	"amount of usb available" -- "sleek design" [label=0.62]
+	"amount of usb ports"
+	"amount of usb ports" -- computer [label=0.51]
+	appearance
+	appearance -- "downfall laptop" [label=0.58]
+	appearance -- ran [label=0.53]
+	"apple computer"
+	"apple computer" -- computer [label=0.69]
+	"apple product"
+	"apple product" -- "apple products" [label=0.96]
+	"apple product" -- product [label=0.78]
+	"apple products"
+	"apple products" -- gift [label=0.44]
+	applications
+	applications -- "get around" [label=0.53]
+	applications -- graphics [label=0.52]
+	apps
+	apps -- "google apps" [label=0.76]
+	apps -- "compatible microsoft office apps" [label=0.64]
+	apps -- "transferring my apps and files" [label=0.63]
+	apps -- "flash storage" [label=0.57]
+	"backlit keyboard"
+	"backlit keyboard" -- keyboard [label=0.76]
+	"backlit keyboard" -- compact [label=0.53]
+	"backlit keyboard" -- startup [label=0.52]
+	"batter life"
+	"batter life" -- "quality of programs" [label=0.65]
+	battery
+	battery -- "battery life" [label=0.86]
+	battery -- charger [label=0.31]
+	"battery life"
+	"battery life" -- "hard drive space" [label=0.55]
+	"battery life" -- "flash storage" [label=0.54]
+	"battery life" -- functionality [label=0.48]
+	big
+	big -- "not big" [label=0.77]
+	boot
+	boot -- "boots up" [label=0.79]
+	boot -- "loads programs" [label=0.55]
+	boot -- "key strokes" [label=0.49]
+	"boots up"
+	brand
+	brand -- ran [label=0.66]
+	brand -- salesman [label=0.50]
+	"build quality"
+	"build quality" -- quality [label=0.79]
+	buy
+	buy -- priced [label=0.50]
+	carry
+	carry -- "easy to carry" [label=0.79]
+	carry -- "not heavy" [label=0.59]
+	"change screens"
+	"change screens" -- screens [label=0.82]
+	charger
+	charges
+	charges -- fast [label=0.46]
+	"checking emails"
+	"checking emails" -- movies [label=0.53]
+	"checking emails" -- "send emails" [label=0.38]
+	chromebook
+	chromebook -- "track pad" [label=0.43]
+	chromebook -- processor [label=0.43]
+	"color lights"
+	"color lights" -- light [label=0.67]
+	compact
+	"compatible microsoft office apps"
+	"compatible microsoft office apps" -- finish [label=0.55]
+	computer
+	computer -- computers [label=0.78]
+	computer -- "computer programs" [label=0.68]
+	"computer programs"
+	"computer programs" -- programs [label=0.77]
+	"computer programs" -- internet [label=0.61]
+	computers
+	computers -- software [label=0.56]
+	computers -- device [label=0.51]
+	controls
+	controls -- pricepoint [label=0.61]
+	controls -- picture [label=0.56]
+	conversion
+	conversion -- easy [label=0.49]
+	cost
+	cost -- shop [label=0.54]
+	cost -- sturdy [label=0.53]
+	"custom keyboard"
+	"custom keyboard" -- keyboard [label=0.74]
+	deal
+	deal -- "original price tag" [label=0.59]
+	design
+	design -- "sleek design" [label=0.82]
+	design -- graphics [label=0.48]
+	device
+	device -- "sync multiple devices" [label=0.70]
+	device -- electronic [label=0.57]
+	device -- wifi [label=0.50]
+	disappointed
+	disappointed -- response [label=0.20]
+	"disk drive"
+	"disk drive" -- "hard drive" [label=0.38]
+	"disk drive" -- "optical drive" [label=0.34]
+	display
+	display -- "touch display" [label=0.84]
+	"downfall laptop"
+	"downfall laptop" -- laptop [label=0.64]
+	durable
+	durable -- light [label=0.46]
+	ease
+	ease -- "transferring my apps and files" [label=0.56]
+	ease -- reliable [label=0.53]
+	easy
+	easy -- "easy to carry" [label=0.69]
+	easy -- "picture quality" [label=0.53]
+	easy -- "set up" [label=0.51]
+	easy -- "turns on/off" [label=0.48]
+	"easy to carry"
+	"easy to carry" -- travel [label=0.53]
+	efficient
+	efficient -- "nice touch" [label=0.65]
+	effort
+	effort -- "touch pad" [label=0.50]
+	electronic
+	"end games"
+	"end games" -- gaming [label=0.62]
+	"end games" -- memory [label=0.53]
+	"equipment performanc"
+	"equipment performanc" -- performance [label=0.64]
+	everything
+	everything -- thin [label=0.62]
+	everything -- "presentation creation" [label=0.56]
+	everything -- experience [label=0.52]
+	expensive
+	expensive -- priced [label=0.64]
+	experience
+	fast
+	fast -- "super fast" [label=0.71]
+	fast -- "flash storage" [label=0.55]
+	fast -- graphs [label=0.47]
+	fast -- "game playing" [label=0.43]
+	features
+	features -- "hardware features" [label=0.76]
+	features -- "touchscreen features" [label=0.73]
+	features -- "touch screen features" [label=0.72]
+	features -- "flash storage" [label=0.54]
+	"find a case"
+	"find a case" -- laptop [label=0.41]
+	finish
+	finish -- fit [label=0.56]
+	fit
+	"flash storage"
+	"flash storage" -- storage [label=0.78]
+	"flash storage" -- "intel core processors" [label=0.67]
+	"flash storage" -- "macbook air" [label=0.55]
+	footprint
+	footprint -- performance [label=0.56]
+	footprint -- lightweight [label=0.53]
+	freeze
+	freeze -- "physical keyboard" [label=0.51]
+	functionality
+	functionality -- functioning [label=0.28]
+	functioning
+	"game playing"
+	gaming
+	gaming -- "gaming laptop" [label=0.78]
+	gaming -- "learning curve" [label=0.51]
+	"gaming laptop"
+	"gaming laptop" -- laptop [label=0.68]
+	"get around"
+	gift
+	"google apps"
+	gpu
+	gpu -- ram [label=0.44]
+	graphics
+	graphics -- "graphics card" [label=0.83]
+	graphics -- "graphics capabilities" [label=0.73]
+	graphics -- "play video games" [label=0.56]
+	"graphics capabilities"
+	"graphics capabilities" -- setup [label=0.58]
+	"graphics card"
+	"graphics card" -- processor [label=0.59]
+	graphs
+	"hard drive"
+	"hard drive" -- "hard drive space" [label=0.84]
+	"hard drive space"
+	"hard drive space" -- model [label=0.51]
+	"hard drive space" -- quick [label=0.51]
+	"hard shiny plastic"
+	"hard shiny plastic" -- plastic [label=0.81]
+	hardware
+	hardware -- "hardware features" [label=0.82]
+	"hardware features"
+	"hardware features" -- "windows 8.1" [label=0.65]
+	"hd screen"
+	"hd screen" -- screen [label=0.73]
+	hdd
+	hdd -- wifi [label=0.51]
+	heavy
+	heavy -- "not heavy" [label=0.83]
+	"hook up"
+	"hook up" -- "picture quality" [label=0.64]
+	"i -7 processor"
+	"i -7 processor" -- processor [label=0.77]
+	install
+	install -- software [label=0.53]
+	"intel core processors"
+	"intel core processors" -- processor [label=0.74]
+	"internal memory"
+	"internal memory" -- memory [label=0.74]
+	internet
+	internet -- "internet connection" [label=0.79]
+	internet -- plastic [label=0.45]
+	"internet connection"
+	investment
+	investment -- "mac air" [label=0.52]
+	"key strokes"
+	keyboard
+	keyboard -- keyboards [label=0.79]
+	keyboard -- "physical keyboard" [label=0.72]
+	keyboard -- "keyboard letter size" [label=0.68]
+	keyboard -- keys [label=0.61]
+	"keyboard letter size"
+	"keyboard letter size" -- size [label=0.61]
+	keyboards
+	keys
+	"lap top"
+	"lap top" -- "school work" [label=0.54]
+	laptop
+	laptop -- laptops [label=0.76]
+	laptop -- "toshiba laptop" [label=0.69]
+	laptop -- "laptop specs" [label=0.68]
+	"laptop specs"
+	"laptop specs" -- specs [label=0.80]
+	laptops
+	laptops -- "lenovo laptops" [label=0.77]
+	large
+	large -- reliable [label=0.53]
+	"laser printer"
+	"laser printer" -- "windows 8 problems" [label=0.66]
+	"learning curve"
+	lenovo
+	lenovo -- "lenovo lapto" [label=0.82]
+	lenovo -- "lenovo laptp" [label=0.78]
+	lenovo -- "lenovo edge" [label=0.77]
+	lenovo -- "lenovo program for photos" [label=0.60]
+	"lenovo edge"
+	"lenovo lapto"
+	"lenovo lapto" -- "lenovo laptop" [label=0.96]
+	"lenovo laptop"
+	"lenovo laptop" -- "lenovo laptops" [label=0.91]
+	"lenovo laptops"
+	"lenovo laptp"
+	"lenovo program for photos"
+	light
+	light -- lighter [label=0.69]
+	light -- weight [label=0.67]
+	lighter
+	lighter -- thinner [label=0.77]
+	lightweight
+	lightweight -- weight [label=0.73]
+	lightweight -- slim [label=0.56]
+	loads
+	loads -- "loads programs" [label=0.77]
+	"loads programs"
+	"loads programs" -- programs [label=0.79]
+	longevity
+	longevity -- salesman [label=0.56]
+	looks
+	looks -- works [label=0.54]
+	looks -- "touch display" [label=0.52]
+	mac
+	mac -- macbook [label=0.73]
+	mac -- "mac air" [label=0.68]
+	mac -- "mac book" [label=0.67]
+	mac -- machine [label=0.61]
+	mac -- pc [label=0.52]
+	"mac air"
+	"mac air" -- "mac airbook" [label=0.83]
+	"mac airbook"
+	"mac book"
+	macbook
+	macbook -- "macbook air" [label=0.84]
+	macbook -- "mba 11inch" [label=0.17]
+	"macbook air"
+	"macbook air" -- "school work" [label=0.49]
+	machine
+	machine -- "spreaders sheets" [label=0.52]
+	materials
+	materials -- "other uses" [label=0.22]
+	"mba 11inch"
+	memory
+	memory -- storage [label=0.52]
+	microphone
+	microphone -- windows [label=0.42]
+	mobile
+	mobile -- small [label=0.52]
+	mobile -- "touch screen" [label=0.51]
+	model
+	money
+	money -- value [label=0.51]
+	"mouse pad"
+	"mouse pad" -- use [label=0.53]
+	movies
+	movies -- "other uses" [label=0.60]
+	movies -- presentations [label=0.51]
+	navigate
+	navigate -- "screen size" [label=0.65]
+	navigation
+	navigation -- "touch screen" [label=0.49]
+	"nice touch"
+	"nice touch" -- touch [label=0.72]
+	noiseless
+	noiseless -- "set up" [label=0.47]
+	"not big"
+	"not big" -- "not heavy" [label=0.76]
+	"not big" -- notebooks [label=0.60]
+	"not heavy"
+	notebooks
+	"nvidia video player"
+	"nvidia video player" -- "super fast" [label=0.58]
+	"optical drive"
+	"original price tag"
+	"original price tag" -- price [label=0.65]
+	"other uses"
+	"other uses" -- use [label=0.61]
+	pc
+	performance
+	performance -- performances [label=0.80]
+	performance -- "screen resolution" [label=0.54]
+	performances
+	"physical keyboard"
+	"physical keyboard" -- slow [label=0.56]
+	picture
+	picture -- "picture quality" [label=0.77]
+	picture -- "share pictures" [label=0.76]
+	"picture quality"
+	"picture quality" -- quality [label=0.79]
+	plastic
+	"play video games"
+	"play video games" -- "plays games" [label=0.40]
+	"plays games"
+	portability
+	portability -- "retina definition" [label=0.64]
+	portability -- portable [label=0.30]
+	portable
+	portable -- "spreaders sheets" [label=0.51]
+	power
+	power -- processing [label=0.52]
+	"presentation creation"
+	presentations
+	presentations -- "spreaders sheets" [label=0.63]
+	price
+	price -- priced [label=0.76]
+	price -- pricey [label=0.70]
+	price -- pricepoint [label=0.59]
+	price -- purchase [label=0.53]
+	priced
+	priced -- processor [label=0.58]
+	pricepoint
+	pricey
+	problems
+	problems -- "windows 8 problems" [label=0.72]
+	process
+	process -- processing [label=0.79]
+	process -- processor [label=0.78]
+	process -- "process of purchasing" [label=0.71]
+	"process of purchasing"
+	processing
+	processing -- "processing speed" [label=0.88]
+	"processing speed"
+	"processing speed" -- speed [label=0.73]
+	processor
+	product
+	product -- "toshiba products" [label=0.64]
+	programs
+	programs -- "start programs" [label=0.80]
+	programs -- "quality of programs" [label=0.74]
+	programs -- ram [label=0.60]
+	purchase
+	purchase -- value [label=0.47]
+	quality
+	quality -- "quality of programs" [label=0.74]
+	"quality of programs"
+	quick
+	quick -- "turns off and on" [label=0.53]
+	ram
+	ran
+	ran -- run [label=0.57]
+	ran -- transition [label=0.54]
+	ran -- transport [label=0.50]
+	reliable
+	reliable -- "wi-fi" [label=0.46]
+	resolution
+	resolution -- "screen resolution" [label=0.85]
+	response
+	response -- "screen resolution" [label=0.69]
+	"retina definition"
+	run
+	run -- runs [label=0.87]
+	runs
+	runs -- "runs games" [label=0.72]
+	runs -- "runs all my games" [label=0.65]
+	"runs all my games"
+	"runs games"
+	salesman
+	"school work"
+	screen
+	screen -- "touch screen" [label=0.81]
+	screen -- screens [label=0.78]
+	screen -- "screen size" [label=0.71]
+	screen -- "screen resolution" [label=0.67]
+	"screen resolution"
+	"screen size"
+	"screen size" -- size [label=0.70]
+	screens
+	"search web"
+	"search web" -- "send emails" [label=0.68]
+	"send emails"
+	"set up"
+	setup
+	"share pictures"
+	shop
+	shop -- "toshiba laptop" [label=0.53]
+	simplicity
+	simplicity -- speed [label=0.53]
+	size
+	"sleek design"
+	slim
+	slow
+	small
+	small -- speaker [label=0.48]
+	software
+	speaker
+	specs
+	speed
+	"spreaders sheets"
+	staff
+	staff -- use [label=0.41]
+	"start programs"
+	"start programs" -- "support communities" [label=0.24]
+	startup
+	storage
+	storage -- "storage space" [label=0.82]
+	"storage space"
+	sturdy
+	"super fast"
+	"support communities"
+	"sync multiple devices"
+	"sync multiple devices" -- "viewing our multiple security cameras" [label=0.30]
+	tech
+	tech -- "touch sensitivity" [label=0.53]
+	thin
+	thin -- thinner [label=0.67]
+	thinner
+	toshiba
+	toshiba -- "toshiba laptop" [label=0.82]
+	toshiba -- "toshiba products" [label=0.73]
+	"toshiba laptop"
+	"toshiba products"
+	touch
+	touch -- "touch screen" [label=0.81]
+	touch -- "touch pad" [label=0.75]
+	touch -- "touch display" [label=0.70]
+	touch -- "touch sensitivity" [label=0.65]
+	"touch display"
+	"touch pad"
+	"touch scree"
+	"touch scree" -- "touch screen" [label=0.91]
+	"touch screen"
+	"touch screen" -- "touch screen features" [label=0.78]
+	"touch screen features"
+	"touch sensitivity"
+	touchpad
+	touchpad -- "touchscreen features" [label=0.69]
+	touchscreen
+	touchscreen -- "touchscreen features" [label=0.82]
+	touchscreen -- updates [label=0.48]
+	"touchscreen features"
+	"track pad"
+	"transferring my apps and files"
+	transition
+	transport
+	travel
+	"turns off and on"
+	"turns on/off"
+	updates
+	use
+	use -- "user friendly" [label=0.54]
+	"user friendly"
+	value
+	"viewing our multiple security cameras"
+	weight
+	"wi-fi"
+	wifi
+	windows
+	windows -- "windows 10" [label=0.85]
+	windows -- "windows 8" [label=0.83]
+	windows -- windows10 [label=0.56]
+	"windows 10"
+	"windows 8"
+	"windows 8" -- "windows 8.1" [label=0.82]
+	"windows 8" -- "windows 8 problems" [label=0.79]
+	"windows 8 problems"
+	"windows 8.1"
+	windows10
+	works
+}

@@ -1,0 +1,29 @@
+graph Final {
+	install
+	install -- installs [label=0.82]
+	install -- installation [label=0.78]
+	install -- "simple-to-operate" [label=0.55]
+	install -- wonderful [label=0.46]
+	installation
+	installs
+	job
+	job -- use [label=0.35]
+	"listening to music and books"
+	"listening to music and books" -- "quality picture" [label=0.63]
+	"loads menu"
+	"loads menu" -- menu [label=0.82]
+	menu
+	menu -- use [label=0.41]
+	"quality picture"
+	"quality picture" -- use [label=0.41]
+	setup
+	setup -- "setup process" [label=0.76]
+	setup -- simple [label=0.54]
+	setup -- use [label=0.52]
+	"setup process"
+	simple
+	simple -- "simple-to-operate" [label=0.69]
+	"simple-to-operate"
+	use
+	wonderful
+}

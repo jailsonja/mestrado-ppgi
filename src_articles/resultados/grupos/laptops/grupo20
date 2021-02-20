@@ -1,0 +1,17 @@
+graph Final {
+	"laser printer"
+	"laser printer" -- "windows 8 problems" [label=0.66]
+	problems
+	problems -- "windows 8 problems" [label=0.72]
+	problems -- "touch sensitivity" [label=0.55]
+	problems -- "wi-fi" [label=0.41]
+	shop
+	shop -- "toshiba laptop" [label=0.53]
+	shop -- tech [label=0.49]
+	tech
+	tech -- "touch sensitivity" [label=0.53]
+	"toshiba laptop"
+	"touch sensitivity"
+	"wi-fi"
+	"windows 8 problems"
+}

@@ -1,0 +1,11 @@
+graph Final {
+	firmware
+	firmware -- "security management" [label=0.56]
+	firmware -- "secure management" [label=0.51]
+	firmware -- support [label=0.43]
+	instructions
+	instructions -- support [label=0.45]
+	"secure management"
+	"security management"
+	support
+}

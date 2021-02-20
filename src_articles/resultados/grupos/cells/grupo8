@@ -1,0 +1,23 @@
+graph Final {
+	iphone
+	iphone -- "service from the salesperson" [label=0.43]
+	iphone -- "soft shiny finish" [label=0.42]
+	iphone -- "two cameras" [label=0.41]
+	iphone -- software [label=0.40]
+	response
+	response -- "screen response" [label=0.83]
+	response -- "screen display" [label=0.63]
+	runs
+	runs -- smooth [label=0.51]
+	"screen display"
+	"screen response"
+	"screen response" -- software [label=0.54]
+	"screen response" -- smooth [label=0.54]
+	"service from the salesperson"
+	smooth
+	smooth -- "very smooth" [label=0.83]
+	"soft shiny finish"
+	software
+	"two cameras"
+	"very smooth"
+}

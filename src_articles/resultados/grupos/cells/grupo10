@@ -1,0 +1,37 @@
+graph Final {
+	navigate
+	navigate -- "size screen" [label=0.54]
+	"ok google"
+	"ok google" -- waterproof [label=0.50]
+	"operation system"
+	"operation system" -- os [label=0.43]
+	os
+	os -- videos [label=0.54]
+	os -- processor [label=0.44]
+	os -- "rose gold color" [label=0.43]
+	os -- "uploading pics straight to the cloud" [label=0.43]
+	os -- "samsung galaxy s7 edge" [label=0.42]
+	os -- responsive [label=0.38]
+	os -- upgrades [label=0.36]
+	performance
+	performance -- "speed performance" [label=0.83]
+	performance -- profile [label=0.55]
+	photos
+	photos -- videos [label=0.62]
+	photos -- "size screen" [label=0.54]
+	processor
+	profile
+	responsive
+	"rose gold color"
+	"samsung galaxy s7 edge"
+	"samsung galaxy s7 edge" -- waterproof [label=0.48]
+	"size screen"
+	"speed performance"
+	"speed performance" -- upgrades [label=0.54]
+	upgrades
+	upgrades -- "upgrades, to the camera" [label=0.69]
+	"upgrades, to the camera"
+	"uploading pics straight to the cloud"
+	videos
+	waterproof
+}

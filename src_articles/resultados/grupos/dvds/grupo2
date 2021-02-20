@@ -1,0 +1,29 @@
+graph Final {
+	player
+	player -- "sony dvd player" [label=0.62]
+	player -- "quality of player" [label=0.60]
+	player -- plays [label=0.54]
+	player -- pricey [label=0.40]
+	player -- "sale price" [label=0.40]
+	plays
+	plays -- "up-conversion option" [label=0.48]
+	plays -- slim [label=0.47]
+	pricey
+	"quality of player"
+	"sale price"
+	"service out"
+	"service out" -- "set up" [label=0.64]
+	"set up"
+	"set up" -- setup [label=0.35]
+	setup
+	setup -- "setup process" [label=0.76]
+	setup -- simple [label=0.54]
+	"setup process"
+	simple
+	simple -- "simple-to-operate" [label=0.69]
+	simple -- "sony dvd player" [label=0.52]
+	"simple-to-operate"
+	slim
+	"sony dvd player"
+	"up-conversion option"
+}

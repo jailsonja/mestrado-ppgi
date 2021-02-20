@@ -1,0 +1,23 @@
+graph Final {
+	operationality
+	operationality -- setup [label=0.44]
+	performance
+	performance -- price [label=0.49]
+	"playing dvds"
+	"playing dvds" -- price [label=0.43]
+	price
+	price -- "sale price" [label=0.71]
+	price -- pricey [label=0.67]
+	price -- "simple-to-operate" [label=0.47]
+	pricey
+	"sale price"
+	setup
+	setup -- "setup process" [label=0.76]
+	setup -- simple [label=0.54]
+	"setup process"
+	simple
+	simple -- "simple-to-operate" [label=0.69]
+	simple -- "sony dvd player" [label=0.52]
+	"simple-to-operate"
+	"sony dvd player"
+}

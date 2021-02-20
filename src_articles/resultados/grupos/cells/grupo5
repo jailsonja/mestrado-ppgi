@@ -1,0 +1,49 @@
+graph Final {
+	"front camera"
+	"front camera" -- "rear camera" [label=0.84]
+	"front camera" -- "processing speed" [label=0.63]
+	"get used to"
+	"get used to" -- upgrades [label=0.57]
+	"ios 10"
+	"ios 10" -- upgrades [label=0.50]
+	"micro sd card slot"
+	"micro sd card slot" -- samsung [label=0.46]
+	"ok google"
+	"ok google" -- waterproof [label=0.50]
+	"processing speed"
+	"processing speed" -- speed [label=0.75]
+	"processing speed" -- update [label=0.52]
+	"processing speed" -- samsung [label=0.44]
+	product
+	product -- "user interface" [label=0.53]
+	product -- samsung [label=0.38]
+	"rear camera"
+	"rear camera" -- "rear cameras" [label=0.94]
+	"rear cameras"
+	samsung
+	samsung -- "samsung 6" [label=0.77]
+	samsung -- "samsung pay" [label=0.73]
+	samsung -- "samsung s6" [label=0.73]
+	samsung -- "samsung galaxy s7 edge" [label=0.68]
+	samsung -- "samsung phone computer" [label=0.66]
+	samsung -- "team at best buy" [label=0.47]
+	"samsung 6"
+	"samsung galaxy s7 edge"
+	"samsung galaxy s7 edge" -- waterproof [label=0.48]
+	"samsung pay"
+	"samsung phone computer"
+	"samsung s6"
+	speed
+	speed -- "speed performance" [label=0.74]
+	speed -- "speed of operation" [label=0.71]
+	"speed of operation"
+	"speed performance"
+	"speed performance" -- upgrades [label=0.54]
+	"team at best buy"
+	update
+	upgrades
+	upgrades -- "upgrades, to the camera" [label=0.69]
+	"upgrades, to the camera"
+	"user interface"
+	waterproof
+}

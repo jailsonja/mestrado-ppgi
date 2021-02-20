@@ -1,0 +1,7 @@
+graph Final {
+	looks
+	looks -- "screen resolution" [label=0.56]
+	looks -- specs [label=0.50]
+	"screen resolution"
+	specs
+}

@@ -1,0 +1,15 @@
+graph Final {
+	experience
+	experience -- startup [label=0.46]
+	experience -- touchscreen [label=0.45]
+	startup
+	startup -- "wi-fi" [label=0.45]
+	touchpad
+	touchpad -- "touchscreen features" [label=0.69]
+	touchscreen
+	touchscreen -- "touchscreen features" [label=0.82]
+	touchscreen -- updates [label=0.48]
+	"touchscreen features"
+	updates
+	"wi-fi"
+}

@@ -1,0 +1,61 @@
+graph Final {
+	"motorola software"
+	"motorola software" -- software [label=0.76]
+	"operation system"
+	"operation system" -- "user friendly" [label=0.64]
+	"operation system" -- software [label=0.56]
+	physically
+	physically -- "pixel xl" [label=0.59]
+	physically -- software [label=0.49]
+	"picture quality"
+	"picture quality" -- quality [label=0.77]
+	"pixel xl"
+	"processing speed"
+	"processing speed" -- speed [label=0.75]
+	"processing speed" -- "rear camera" [label=0.59]
+	"processing speed" -- update [label=0.52]
+	"processing speed" -- quick [label=0.50]
+	quality
+	quality -- "sound quality" [label=0.80]
+	quick
+	quick -- "quick charge function" [label=0.67]
+	quick -- "sound quality" [label=0.57]
+	"quick charge function"
+	radio
+	radio -- sound [label=0.51]
+	"rear camera"
+	"rear camera" -- "rear cameras" [label=0.94]
+	"rear cameras"
+	response
+	response -- "screen response" [label=0.83]
+	response -- "screen display" [label=0.63]
+	runs
+	runs -- smooth [label=0.51]
+	"screen display"
+	"screen response"
+	"screen response" -- software [label=0.54]
+	"screen response" -- smooth [label=0.54]
+	"screen size"
+	"screen size" -- "user friendly" [label=0.60]
+	smooth
+	smooth -- "very smooth" [label=0.83]
+	software
+	software -- sound [label=0.43]
+	sound
+	sound -- "sound quality" [label=0.76]
+	sound -- "stereo speakers" [label=0.59]
+	"sound quality"
+	"sound quality" -- syncs [label=0.52]
+	speed
+	speed -- "speed performance" [label=0.74]
+	speed -- "speed of operation" [label=0.71]
+	"speed of operation"
+	"speed performance"
+	"stereo speakers"
+	stylish
+	stylish -- "very smooth" [label=0.64]
+	syncs
+	update
+	"user friendly"
+	"very smooth"
+}

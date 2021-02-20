@@ -1,0 +1,9 @@
+graph Final {
+	device
+	device -- "usb charging ports" [label=0.49]
+	device -- "wifi strength" [label=0.48]
+	"usb charging"
+	"usb charging" -- "usb charging ports" [label=0.90]
+	"usb charging ports"
+	"wifi strength"
+}

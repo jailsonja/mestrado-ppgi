@@ -1,0 +1,7 @@
+graph Final {
+	"dvd playe"
+	"dvd playe" -- simple [label=0.45]
+	"dvd playe" -- sound [label=0.30]
+	simple
+	sound
+}

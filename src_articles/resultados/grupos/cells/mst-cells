@@ -1,0 +1,475 @@
+graph Final {
+	"6s"
+	"6s" -- "iphone 6s" [label=0.70]
+	"a10 chip"
+	"a10 chip" -- fast [label=0.41]
+	"ability to use to apps split screen"
+	"ability to use to apps split screen" -- apps [label=0.60]
+	"ability to use to apps split screen" -- screen [label=0.58]
+	"adaptor for the microusb"
+	"adaptor for the microusb" -- charge [label=0.52]
+	"all features"
+	"all features" -- features [label=0.76]
+	"all features" -- "picture quality" [label=0.68]
+	android
+	android -- samsung [label=0.50]
+	android -- maneuver [label=0.49]
+	android -- htc [label=0.45]
+	apps
+	apps -- "user interface" [label=0.53]
+	apps -- responsive [label=0.46]
+	attachments
+	attachments -- pictures [label=0.52]
+	bargain
+	bargain -- memory [label=0.48]
+	"batterie life"
+	"batterie life" -- charge [label=0.50]
+	battery
+	battery -- "battery life" [label=0.85]
+	battery -- "battery power" [label=0.73]
+	battery -- "removable battery" [label=0.69]
+	battery -- "replaceable battery" [label=0.67]
+	battery -- "changeable battery" [label=0.67]
+	battery -- "turbo charger" [label=0.58]
+	"battery life"
+	"battery life" -- "lasting battery life" [label=0.76]
+	"battery power"
+	beautiful
+	beautiful -- "google assistant" [label=0.47]
+	beautiful -- quick [label=0.47]
+	"best buy customer service"
+	"best buy customer service" -- "customer service" [label=0.85]
+	"bestbuy staff"
+	"bestbuy staff" -- buy [label=0.51]
+	big
+	big -- "big phone" [label=0.68]
+	big -- ugly [label=0.57]
+	big -- gps [label=0.48]
+	big -- choice [label=0.47]
+	"big phone"
+	"big phone" -- phone [label=0.65]
+	built
+	built -- "qualities built in" [label=0.73]
+	built -- "built-in calendar" [label=0.71]
+	"built-in calendar"
+	buy
+	buy -- "team at best buy" [label=0.60]
+	buy -- "service at best buy" [label=0.60]
+	"call quality"
+	"call quality" -- quality [label=0.77]
+	camera
+	camera -- cameras [label=0.78]
+	camera -- "camera quality" [label=0.68]
+	camera -- "dual lens camera" [label=0.66]
+	camera -- "wide angle camera" [label=0.65]
+	camera -- "twist for camera" [label=0.64]
+	camera -- "high definition camera" [label=0.61]
+	camera -- "upgrades, to the camera" [label=0.59]
+	camera -- "google pixel" [label=0.42]
+	"camera features"
+	"camera features" -- features [label=0.73]
+	"camera quality"
+	"camera quality" -- quality [label=0.77]
+	cameras
+	cameras -- "two cameras" [label=0.86]
+	cameras -- "rear cameras" [label=0.81]
+	cameras -- lense [label=0.61]
+	"case selection"
+	"case selection" -- sleek [label=0.55]
+	"change the batter"
+	"change the batter" -- "wide angle camera" [label=0.69]
+	"change the batter" -- "handle one handed" [label=0.28]
+	"changeable battery"
+	"changeable battery" -- convenient [label=0.64]
+	charge
+	charge -- charges [label=0.87]
+	charge -- "quick charge function" [label=0.66]
+	charge -- "turbo charger" [label=0.62]
+	charges
+	charges -- chargest [label=0.65]
+	charges -- downloads [label=0.50]
+	chargest
+	charging
+	charging -- "fast charging" [label=0.85]
+	charging -- "wireless charging" [label=0.81]
+	charging -- "several charging options" [label=0.71]
+	choice
+	"chop twice for flashlight"
+	"chop twice for flashlight" -- "twist for camera" [label=0.77]
+	"chop twice for flashlight" -- light [label=0.61]
+	"clarity in the pictures"
+	"clarity in the pictures" -- pictures [label=0.68]
+	"clarity of the screen"
+	"clarity of the screen" -- screen [label=0.63]
+	color
+	color -- "color gold" [label=0.79]
+	color -- "pretty color" [label=0.78]
+	color -- "rose gold color" [label=0.72]
+	color -- "finish on the jet black" [label=0.58]
+	"color gold"
+	"color gold" -- design [label=0.53]
+	convenient
+	cool
+	cool -- looks [label=0.62]
+	"curved screen"
+	"curved screen" -- screen [label=0.70]
+	"customer service"
+	"customer service" -- service [label=0.82]
+	"daydream vr"
+	"daydream vr" -- phone [label=0.31]
+	design
+	design -- "new design" [label=0.81]
+	design -- "sleek design" [label=0.78]
+	design -- designing [label=0.78]
+	design -- "screen response" [label=0.55]
+	designing
+	device
+	device -- simplicity [label=0.49]
+	device -- product [label=0.48]
+	display
+	display -- "screen display" [label=0.81]
+	display -- "smiled display" [label=0.75]
+	"doesn't have a lot of added software"
+	"doesn't have a lot of added software" -- software [label=0.62]
+	downloads
+	downloads -- reliable [label=0.54]
+	"droid force"
+	"droid force" -- "service from the salesperson" [label=0.64]
+	"dual forward"
+	"dual forward" -- "rear cameras" [label=0.69]
+	"dual lens camera"
+	durability
+	durability -- "expandable storage option" [label=0.64]
+	durable
+	durable -- "lasting battery" [label=0.62]
+	"edge features"
+	"edge features" -- features [label=0.76]
+	efficiency
+	efficiency -- "very smooth" [label=0.59]
+	"expandable storage option"
+	"expandable storage option" -- storage [label=0.71]
+	expensive
+	expensive -- specs [label=0.56]
+	expensive -- "vr alone" [label=0.54]
+	"extra storage"
+	"extra storage" -- storage [label=0.79]
+	"extra storage" -- fast [label=0.51]
+	"extra storage" -- "water resistance" [label=0.23]
+	"facetime quality"
+	"facetime quality" -- quality [label=0.69]
+	fast
+	fast -- "fast charging" [label=0.67]
+	"fast charging"
+	"fast charging" -- "lasting battery" [label=0.66]
+	"fast charging" -- processor [label=0.52]
+	feature
+	feature -- features [label=0.92]
+	features
+	features -- "new features" [label=0.77]
+	features -- "photo features" [label=0.73]
+	features -- "speaker features" [label=0.70]
+	features -- "qualities built in" [label=0.54]
+	"feeling performance"
+	"feeling performance" -- performance [label=0.81]
+	"fingerprint scanner"
+	"fingerprint scanner" -- "moto mods" [label=0.46]
+	"finish on the jet black"
+	"finish on the jet black" -- "look of the jet black" [label=0.40]
+	"first phone"
+	"first phone" -- phone [label=0.63]
+	"flip back and forth"
+	"flip back and forth" -- lense [label=0.58]
+	"force touch"
+	"force touch" -- "live photos" [label=0.67]
+	"front camera"
+	"front camera" -- "rear camera" [label=0.84]
+	"front camera" -- "processing speed" [label=0.63]
+	functional
+	functional -- functionality [label=0.86]
+	functionality
+	functionality -- use [label=0.41]
+	g5
+	g5 -- "lg g5" [label=0.79]
+	"get used to"
+	"get used to" -- use [label=0.61]
+	"get used to" -- upgrades [label=0.57]
+	glass
+	glass -- screen [label=0.48]
+	"google assistant"
+	"google pixel"
+	gps
+	graphics
+	graphics -- pictures [label=0.22]
+	great
+	great -- "upgrades, to the camera" [label=0.50]
+	great -- "high resolution pics" [label=0.48]
+	great -- "new themes" [label=0.47]
+	great -- promotion [label=0.45]
+	great -- "new galaxy" [label=0.45]
+	great -- "selfie camara" [label=0.35]
+	"handle one handed"
+	hardware
+	hardware -- "piece of hardware" [label=0.77]
+	hardware -- software [label=0.59]
+	hardware -- reception [label=0.54]
+	"high definition camera"
+	"high resolution pics"
+	htc
+	htc -- "htc series" [label=0.72]
+	htc -- "lg g5" [label=0.47]
+	"htc series"
+	"interconnectivity between my car bluetooth and the phone"
+	"interconnectivity between my car bluetooth and the phone" -- phone [label=0.47]
+	interface
+	interface -- "user interface" [label=0.89]
+	"ios 10"
+	"ios 10" -- os [label=0.58]
+	iphone
+	iphone -- "iphone 6" [label=0.79]
+	iphone -- "new iphone" [label=0.75]
+	iphone -- phone [label=0.64]
+	iphone -- "soft shiny finish" [label=0.42]
+	"iphone 6"
+	"iphone 6" -- "iphone 6s" [label=0.85]
+	"iphone 6" -- "iphone 7 plus" [label=0.77]
+	"iphone 6s"
+	"iphone 7 plus"
+	"lasting battery"
+	"lasting battery" -- "lasting battery life" [label=0.92]
+	"lasting battery life"
+	"lasting battery life" -- thin [label=0.48]
+	lense
+	"lg g5"
+	light
+	light -- weight [label=0.69]
+	light -- slim [label=0.54]
+	lightweight
+	lightweight -- weight [label=0.73]
+	"live photos"
+	"live photos" -- photos [label=0.80]
+	"look of the jet black"
+	looks
+	looks -- "screen resolution" [label=0.56]
+	maneuver
+	memory
+	memory -- processor [label=0.59]
+	memory -- "vr alone" [label=0.52]
+	"micro sd card slot"
+	"micro sd card slot" -- samsung [label=0.46]
+	mods
+	mods -- "moto mods" [label=0.80]
+	mods -- "moto-mods" [label=0.71]
+	"modular ability"
+	"modular ability" -- "smiled display" [label=0.64]
+	moto
+	moto -- "moto mods" [label=0.79]
+	moto -- "moto phone" [label=0.71]
+	moto -- "moto z force droid" [label=0.63]
+	moto -- "motorola software" [label=0.56]
+	"moto mods"
+	"moto phone"
+	"moto phone" -- phone [label=0.62]
+	"moto z force droid"
+	"moto-mods"
+	"motorola software"
+	"motorola software" -- software [label=0.76]
+	navigate
+	navigate -- "size screen" [label=0.54]
+	"new design"
+	"new features"
+	"new galaxy"
+	"new iphone"
+	"new themes"
+	"notch phone"
+	"notch phone" -- phone [label=0.62]
+	"ok google"
+	"ok google" -- waterproof [label=0.50]
+	operate
+	operate -- "operation system" [label=0.31]
+	"operation system"
+	"operation system" -- "user friendly" [label=0.64]
+	"operation system" -- software [label=0.56]
+	options
+	options -- "several charging options" [label=0.72]
+	os
+	os -- videos [label=0.54]
+	performance
+	performance -- "speed performance" [label=0.83]
+	performance -- profile [label=0.55]
+	phone
+	phone -- smartphone [label=0.57]
+	phone -- "phone/data plan" [label=0.56]
+	phone -- "samsung phone computer" [label=0.56]
+	phone -- worked [label=0.39]
+	"phone/data plan"
+	"phone/data plan" -- price [label=0.55]
+	"photo features"
+	photos
+	photos -- videos [label=0.62]
+	physically
+	physically -- "pixel xl" [label=0.59]
+	physically -- software [label=0.49]
+	picture
+	picture -- pictures [label=0.92]
+	picture -- "picture quality" [label=0.75]
+	"picture quality"
+	"picture quality" -- quality [label=0.77]
+	pictures
+	pictures -- "taking pictures" [label=0.79]
+	pictures -- videos [label=0.62]
+	"piece of hardware"
+	"pixel xl"
+	"pretty color"
+	price
+	price -- priced [label=0.83]
+	price -- service [label=0.56]
+	priced
+	"processing speed"
+	"processing speed" -- speed [label=0.75]
+	"processing speed" -- update [label=0.52]
+	processor
+	product
+	product -- "user interface" [label=0.53]
+	profile
+	promotion
+	"qualities built in"
+	quality
+	quality -- "sound quality" [label=0.80]
+	quick
+	quick -- "quick charge function" [label=0.67]
+	quick -- "sound quality" [label=0.57]
+	"quick charge function"
+	radio
+	radio -- sound [label=0.51]
+	read
+	read -- "read screen" [label=0.71]
+	"read screen"
+	"read screen" -- screen [label=0.73]
+	"rear camera"
+	"rear camera" -- "rear cameras" [label=0.94]
+	"rear cameras"
+	reception
+	reliable
+	"removable battery"
+	"replaceable battery"
+	response
+	response -- "screen response" [label=0.83]
+	responsive
+	"rose gold color"
+	runs
+	runs -- smooth [label=0.51]
+	"s7 edg"
+	"s7 edg" -- "s7 edge" [label=0.90]
+	"s7 edge"
+	"s7 edge" -- "samsung galaxy s7 edge" [label=0.73]
+	samsung
+	samsung -- "samsung 6" [label=0.77]
+	samsung -- "samsung pay" [label=0.73]
+	samsung -- "samsung s6" [label=0.73]
+	samsung -- "samsung galaxy s7 edge" [label=0.68]
+	samsung -- "samsung phone computer" [label=0.66]
+	"samsung 6"
+	"samsung galaxy s7 edge"
+	"samsung galaxy s7 edge" -- waterproof [label=0.48]
+	"samsung pay"
+	"samsung phone computer"
+	"samsung s6"
+	screen
+	screen -- "screen size" [label=0.74]
+	screen -- "screen display" [label=0.72]
+	screen -- "screen clarity" [label=0.70]
+	screen -- "screen response" [label=0.69]
+	screen -- "screen resolution" [label=0.68]
+	"screen clarity"
+	"screen clarity" -- texting [label=0.57]
+	"screen display"
+	"screen resolution"
+	"screen response"
+	"screen response" -- smooth [label=0.54]
+	"screen size"
+	"screen size" -- size [label=0.76]
+	"screen size" -- "user friendly" [label=0.60]
+	"selfie camara"
+	service
+	service -- "service from sales" [label=0.73]
+	service -- "service at best buy" [label=0.71]
+	service -- "service from the salesperson" [label=0.68]
+	"service at best buy"
+	"service from sales"
+	"service from the salesperson"
+	"service from the salesperson" -- "swipe away the notification" [label=0.26]
+	"several charging options"
+	simplicity
+	size
+	size -- "size screen" [label=0.74]
+	"size screen"
+	sleek
+	sleek -- "sleek design" [label=0.78]
+	sleek -- "uploading pics straight to the cloud" [label=0.50]
+	"sleek design"
+	slim
+	smartphone
+	"smiled display"
+	smooth
+	smooth -- "very smooth" [label=0.83]
+	"soft shiny finish"
+	software
+	sound
+	sound -- "sound quality" [label=0.76]
+	sound -- "stereo speakers" [label=0.59]
+	sound -- "speaker module" [label=0.57]
+	"sound quality"
+	"sound quality" -- syncs [label=0.52]
+	"speaker features"
+	"speaker module"
+	specifications
+	specifications -- specs [label=0.32]
+	specs
+	speed
+	speed -- "speed performance" [label=0.74]
+	speed -- "speed of operation" [label=0.71]
+	"speed of operation"
+	"speed performance"
+	"stereo speakers"
+	storage
+	stylish
+	stylish -- "very smooth" [label=0.64]
+	"swipe away the notification"
+	syncs
+	syncs -- works [label=0.49]
+	"taking pictures"
+	"taking pictures" -- working [label=0.57]
+	"team at best buy"
+	texting
+	thin
+	thin -- "thing of beauty" [label=0.52]
+	"thing of beauty"
+	"turbo charger"
+	"twist for camera"
+	"two cameras"
+	ugly
+	update
+	upgrades
+	upgrades -- "upgrades, to the camera" [label=0.69]
+	"upgrades, to the camera"
+	"uploading pics straight to the cloud"
+	use
+	use -- "use for older people" [label=0.57]
+	use -- "user friendly" [label=0.55]
+	"use for older people"
+	"user friendly"
+	"user interface"
+	value
+	value -- "vr alone" [label=0.21]
+	"very smooth"
+	videos
+	"vr alone"
+	"water resistance"
+	waterproof
+	weight
+	"wide angle camera"
+	"wireless charging"
+	worked
+	working
+	works
+}

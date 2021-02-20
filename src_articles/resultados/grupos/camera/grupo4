@@ -1,0 +1,37 @@
+graph Final {
+	camara
+	camara -- "camara instantanea" [label=0.82]
+	camara -- "camara package" [label=0.77]
+	"camara instantanea"
+	"camara package"
+	"camara package" -- "zoom lenses" [label=0.61]
+	"camara package" -- pincture [label=0.56]
+	"craft work"
+	"craft work" -- work [label=0.71]
+	"intelligent options"
+	"intelligent options" -- "variety of scene options" [label=0.80]
+	"intelligent options" -- options [label=0.73]
+	learn
+	learn -- "wi-fi feature" [label=0.56]
+	learn -- options [label=0.45]
+	lenses
+	lenses -- "zoom lenses" [label=0.84]
+	lenses -- "plenty of features" [label=0.58]
+	options
+	options -- work [label=0.40]
+	pincture
+	plays
+	plays -- works [label=0.54]
+	"plenty of features"
+	"variety of scene options"
+	"wi-fi feature"
+	work
+	work -- works [label=0.87]
+	work -- "zoom lenses" [label=0.42]
+	works
+	zoom
+	zoom -- "zoom lens" [label=0.84]
+	"zoom lens"
+	"zoom lens" -- "zoom lenses" [label=0.92]
+	"zoom lenses"
+}

@@ -1,0 +1,41 @@
+graph Final {
+	"moto phone"
+	"moto phone" -- phone [label=0.62]
+	"moto z force droid"
+	"moto z force droid" -- phone [label=0.39]
+	navigate
+	navigate -- "size screen" [label=0.54]
+	navigate -- phone [label=0.33]
+	"new galaxy"
+	"new galaxy" -- phone [label=0.41]
+	"new iphone"
+	"new iphone" -- phone [label=0.56]
+	"operation system"
+	"operation system" -- phone [label=0.42]
+	phone
+	phone -- smartphone [label=0.57]
+	phone -- "service from the salesperson" [label=0.42]
+	phone -- update [label=0.42]
+	phone -- promotion [label=0.41]
+	phone -- "two cameras" [label=0.39]
+	phone -- physically [label=0.38]
+	phone -- runs [label=0.37]
+	phone -- "soft shiny finish" [label=0.36]
+	phone -- "screen clarity" [label=0.35]
+	phone -- "very smooth" [label=0.32]
+	phone -- simplicity [label=0.30]
+	physically
+	"processing speed"
+	"processing speed" -- update [label=0.52]
+	promotion
+	runs
+	"screen clarity"
+	"service from the salesperson"
+	simplicity
+	"size screen"
+	smartphone
+	"soft shiny finish"
+	"two cameras"
+	update
+	"very smooth"
+}

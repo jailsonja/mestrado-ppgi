@@ -1,0 +1,81 @@
+graph Final {
+	computers
+	computers -- tech [label=0.53]
+	computers -- pc [label=0.46]
+	functionality
+	functionality -- travel [label=0.47]
+	"graphics capabilities"
+	"graphics capabilities" -- setup [label=0.58]
+	hardware
+	hardware -- "hardware features" [label=0.82]
+	hardware -- pc [label=0.43]
+	"hardware features"
+	"hardware features" -- "windows 8.1" [label=0.65]
+	"hd screen"
+	"hd screen" -- screen [label=0.73]
+	"key strokes"
+	"key strokes" -- pc [label=0.42]
+	"keyboard letter size"
+	"keyboard letter size" -- size [label=0.61]
+	looks
+	looks -- "touch display" [label=0.52]
+	looks -- setup [label=0.51]
+	mobile
+	mobile -- "touch screen" [label=0.51]
+	"mouse pad"
+	"mouse pad" -- size [label=0.48]
+	navigate
+	navigate -- "screen size" [label=0.65]
+	"nice touch"
+	"nice touch" -- touch [label=0.72]
+	"not heavy"
+	"not heavy" -- size [label=0.46]
+	pc
+	presentations
+	presentations -- "spreaders sheets" [label=0.63]
+	presentations -- screen [label=0.47]
+	resolution
+	resolution -- "screen resolution" [label=0.85]
+	response
+	response -- "screen resolution" [label=0.69]
+	"school work"
+	"school work" -- "touch screen" [label=0.46]
+	screen
+	screen -- "touch screen" [label=0.81]
+	screen -- "screen size" [label=0.71]
+	screen -- touchscreen [label=0.68]
+	screen -- "screen resolution" [label=0.67]
+	"screen resolution"
+	"screen size"
+	"screen size" -- size [label=0.70]
+	setup
+	size
+	size -- travel [label=0.45]
+	"spreaders sheets"
+	tech
+	tech -- "touch sensitivity" [label=0.53]
+	touch
+	touch -- "touch screen" [label=0.81]
+	touch -- "touch pad" [label=0.75]
+	touch -- "touch display" [label=0.70]
+	touch -- "touch sensitivity" [label=0.65]
+	"touch display"
+	"touch display" -- windows10 [label=0.51]
+	"touch pad"
+	"touch scree"
+	"touch scree" -- "touch screen" [label=0.91]
+	"touch screen"
+	"touch screen" -- "touch screen features" [label=0.78]
+	"touch screen features"
+	"touch sensitivity"
+	touchpad
+	touchpad -- "touchscreen features" [label=0.69]
+	touchscreen
+	touchscreen -- "touchscreen features" [label=0.82]
+	touchscreen -- updates [label=0.48]
+	"touchscreen features"
+	travel
+	updates
+	"windows 8.1"
+	windows10
+}

@@ -1,0 +1,27 @@
+graph Final {
+	carry
+	carry -- weight [label=0.41]
+	light
+	light -- "pictures in low light" [label=0.66]
+	light -- weight [label=0.63]
+	light -- "video option" [label=0.50]
+	light -- quick [label=0.41]
+	light -- performance [label=0.34]
+	performance
+	performance -- "photo performance" [label=0.79]
+	performance -- "tutorial online" [label=0.55]
+	"photo performance"
+	"pictures in low light"
+	"pictures in low light" -- "quality of colors" [label=0.69]
+	"piece of equipment"
+	"piece of equipment" -- weight [label=0.57]
+	"quailty photos"
+	"quailty photos" -- weight [label=0.50]
+	"quality of colors"
+	quick
+	quick -- shipping [label=0.52]
+	shipping
+	"tutorial online"
+	"video option"
+	weight
+}

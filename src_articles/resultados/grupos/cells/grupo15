@@ -1,0 +1,11 @@
+graph Final {
+	"ok google"
+	"ok google" -- waterproof [label=0.50]
+	"s7 edg"
+	"s7 edg" -- "s7 edge" [label=0.90]
+	"s7 edge"
+	"s7 edge" -- "samsung galaxy s7 edge" [label=0.73]
+	"samsung galaxy s7 edge"
+	"samsung galaxy s7 edge" -- waterproof [label=0.48]
+	waterproof
+}

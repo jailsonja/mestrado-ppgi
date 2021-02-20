@@ -1,0 +1,25 @@
+graph Final {
+	"lap top"
+	"lap top" -- product [label=0.39]
+	"laser printer"
+	"laser printer" -- "windows 8 problems" [label=0.66]
+	"original price tag"
+	"original price tag" -- price [label=0.65]
+	price
+	price -- pricey [label=0.70]
+	price -- pricepoint [label=0.59]
+	price -- product [label=0.44]
+	pricepoint
+	pricey
+	product
+	product -- "toshiba products" [label=0.64]
+	product -- software [label=0.45]
+	product -- "windows 8" [label=0.32]
+	software
+	"toshiba products"
+	"windows 8"
+	"windows 8" -- "windows 8.1" [label=0.82]
+	"windows 8" -- "windows 8 problems" [label=0.79]
+	"windows 8 problems"
+	"windows 8.1"
+}

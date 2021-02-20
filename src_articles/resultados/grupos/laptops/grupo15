@@ -1,0 +1,29 @@
+graph Final {
+	lightweight
+	lightweight -- slim [label=0.56]
+	lightweight -- sturdy [label=0.51]
+	lightweight -- performance [label=0.39]
+	lightweight -- travel [label=0.36]
+	performance
+	performance -- performances [label=0.80]
+	performance -- "screen resolution" [label=0.54]
+	performance -- programs [label=0.51]
+	performances
+	"picture quality"
+	"picture quality" -- quality [label=0.79]
+	programs
+	programs -- "start programs" [label=0.80]
+	programs -- "quality of programs" [label=0.74]
+	quality
+	quality -- "quality of programs" [label=0.74]
+	"quality of programs"
+	resolution
+	resolution -- "screen resolution" [label=0.85]
+	response
+	response -- "screen resolution" [label=0.69]
+	"screen resolution"
+	slim
+	"start programs"
+	sturdy
+	travel
+}

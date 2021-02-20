@@ -1,0 +1,15 @@
+graph Final {
+	maintain
+	maintain -- secure [label=0.55]
+	"open port"
+	"open port" -- secure [label=0.59]
+	secure
+	secure -- "secure management" [label=0.74]
+	secure -- security [label=0.64]
+	"secure management"
+	security
+	security -- "security features" [label=0.76]
+	security -- "security management" [label=0.76]
+	"security features"
+	"security management"
+}

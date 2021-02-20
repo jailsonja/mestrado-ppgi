@@ -1,0 +1,19 @@
+graph Final {
+	connections
+	connections -- deal [label=0.47]
+	connectivity
+	connectivity -- "software/app" [label=0.58]
+	connectivity -- wifi [label=0.48]
+	deal
+	deal -- "wifi extender" [label=0.51]
+	"extend signal"
+	"extend signal" -- wifi [label=0.43]
+	"software/app"
+	start
+	start -- wifi [label=0.30]
+	wifi
+	wifi -- "wifi extender" [label=0.68]
+	wifi -- "wifi strength" [label=0.65]
+	"wifi extender"
+	"wifi strength"
+}

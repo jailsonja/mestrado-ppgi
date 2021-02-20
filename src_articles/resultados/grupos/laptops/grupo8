@@ -1,0 +1,33 @@
+graph Final {
+	"11 size"
+	"11 size" -- mac [label=0.38]
+	mac
+	mac -- "spreaders sheets" [label=0.38]
+	mac -- performance [label=0.38]
+	mac -- processor [label=0.37]
+	performance
+	performance -- performances [label=0.80]
+	performance -- "screen resolution" [label=0.54]
+	performances
+	presentations
+	presentations -- "spreaders sheets" [label=0.63]
+	process
+	process -- processing [label=0.79]
+	process -- processor [label=0.78]
+	process -- "process of purchasing" [label=0.71]
+	"process of purchasing"
+	processing
+	processing -- "processing speed" [label=0.88]
+	"processing speed"
+	"processing speed" -- speed [label=0.73]
+	processor
+	resolution
+	resolution -- "screen resolution" [label=0.85]
+	response
+	response -- "screen resolution" [label=0.69]
+	"screen resolution"
+	simplicity
+	simplicity -- speed [label=0.53]
+	speed
+	"spreaders sheets"
+}

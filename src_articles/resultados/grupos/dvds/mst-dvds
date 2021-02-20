@@ -1,0 +1,219 @@
+graph Final {
+	affordable
+	affordable -- setup [label=0.46]
+	audio
+	audio -- "audio compatibility" [label=0.76]
+	audio -- sound [label=0.61]
+	audio -- video [label=0.60]
+	audio -- "fits the bill" [label=0.53]
+	"audio compatibility"
+	"audio compatibility" -- "sony customer service group" [label=0.67]
+	buttons
+	buttons -- features [label=0.53]
+	buttons -- use [label=0.50]
+	buy
+	buy -- products [label=0.50]
+	colors
+	colors -- quality [label=0.47]
+	combo
+	combo -- "dvd/vcr combo" [label=0.72]
+	combo -- pricey [label=0.54]
+	compact
+	compact -- slim [label=0.57]
+	connect
+	connect -- connected [label=0.83]
+	connect -- "hdmi connection" [label=0.70]
+	connect -- "different connections" [label=0.68]
+	connect -- view [label=0.44]
+	connected
+	connected -- operate [label=0.61]
+	connected -- inexpensive [label=0.53]
+	"conversion to hd"
+	"conversion to hd" -- "quality picture" [label=0.60]
+	"conversion to hd" -- works [label=0.49]
+	cost
+	cost -- "quality of player" [label=0.60]
+	"different connections"
+	durable
+	durable -- small [label=0.52]
+	dvd
+	dvd -- "dvd playe" [label=0.73]
+	dvd -- "dvd/vcr combo" [label=0.57]
+	dvd -- "playing dvds" [label=0.54]
+	dvd -- resolution [label=0.33]
+	"dvd playe"
+	"dvd playe" -- "dvd player" [label=0.93]
+	"dvd player"
+	"dvd player" -- player [label=0.83]
+	"dvd player" -- "sony dvd player" [label=0.74]
+	"dvd player" -- "vcr part" [label=0.28]
+	"dvd/vcr combo"
+	easy
+	easy -- "easy-to-install" [label=0.58]
+	easy -- use [label=0.54]
+	easy -- sturdy [label=0.52]
+	easy -- money [label=0.44]
+	easy -- experience [label=0.43]
+	easy -- hookup [label=0.37]
+	"easy-to-install"
+	"easy-to-install" -- "simple-to-operate" [label=0.81]
+	"easy-to-install" -- install [label=0.71]
+	experience
+	features
+	features -- footprint [label=0.56]
+	"figured out"
+	"figured out" -- "set up" [label=0.56]
+	fit
+	fit -- fits [label=0.88]
+	fits
+	fits -- "fits the bill" [label=0.70]
+	fits -- "nice small" [label=0.56]
+	fits -- item [label=0.54]
+	fits -- unit [label=0.49]
+	"fits the bill"
+	footprint
+	hdmi
+	hdmi -- "hdmi connection" [label=0.70]
+	hdmi -- slim [label=0.50]
+	"hdmi connection"
+	"hdmi connection" -- "motion blu" [label=0.23]
+	"hook up"
+	"hook up" -- sound [label=0.51]
+	"hooked up"
+	"hooked up" -- remote [label=0.54]
+	hookup
+	inexpensive
+	inexpensive -- size [label=0.55]
+	install
+	install -- installs [label=0.82]
+	install -- installation [label=0.78]
+	installation
+	installs
+	item
+	item -- "service out" [label=0.56]
+	job
+	job -- "playing dvds" [label=0.48]
+	"listening to music and books"
+	"listening to music and books" -- "quality picture" [label=0.63]
+	"loads menu"
+	"loads menu" -- menu [label=0.82]
+	loud
+	loud -- sound [label=0.33]
+	"low-priced"
+	"low-priced" -- "simple-to-operate" [label=0.77]
+	"low-priced" -- price [label=0.66]
+	machine
+	machine -- purchase [label=0.46]
+	machine -- read [label=0.45]
+	menu
+	menu -- "set up" [label=0.51]
+	money
+	"motion blu"
+	move
+	move -- "set up" [label=0.52]
+	"nice small"
+	"nice small" -- small [label=0.77]
+	noisy
+	noisy -- read [label=0.46]
+	operate
+	operate -- "simple-to-operate" [label=0.71]
+	operate -- remote [label=0.53]
+	"operating instructions"
+	"operating instructions" -- product [label=0.52]
+	operationality
+	operationality -- setup [label=0.44]
+	performance
+	performance -- working [label=0.56]
+	pic
+	pic -- picture [label=0.83]
+	picture
+	picture -- "picture quality" [label=0.75]
+	"picture quality"
+	"picture quality" -- quality [label=0.78]
+	player
+	"playing dvds"
+	plays
+	plays -- "plays videos" [label=0.73]
+	"plays videos"
+	"plays videos" -- video [label=0.72]
+	price
+	price -- "sale price" [label=0.71]
+	price -- pricey [label=0.67]
+	pricey
+	product
+	product -- products [label=0.83]
+	product -- "sony product" [label=0.71]
+	product -- salesman [label=0.42]
+	products
+	products -- purchase [label=0.58]
+	"program for recording"
+	"program for recording" -- working [label=0.23]
+	purchase
+	quality
+	quality -- "quality picture" [label=0.74]
+	quality -- "sony quality" [label=0.71]
+	quality -- "quality of player" [label=0.68]
+	quality -- "quality of the pictures" [label=0.64]
+	"quality of player"
+	"quality of the pictures"
+	"quality picture"
+	read
+	reliable
+	reliable -- simple [label=0.63]
+	remote
+	remote -- "remote control" [label=0.76]
+	remote -- "remote graphics" [label=0.72]
+	"remote control"
+	"remote graphics"
+	resolution
+	rewinds
+	rewinds -- "vcr part" [label=0.57]
+	"sale price"
+	salesman
+	salesman -- salesperson [label=0.34]
+	salesperson
+	"service out"
+	"service out" -- "set up" [label=0.64]
+	"set up"
+	setup
+	setup -- "setup process" [label=0.76]
+	setup -- simple [label=0.54]
+	"setup process"
+	"setup process" -- "support/toshiba" [label=0.22]
+	simple
+	simple -- "simple-to-operate" [label=0.69]
+	simple -- simplicity [label=0.30]
+	"simple-to-operate"
+	simplicity
+	size
+	slim
+	small
+	sony
+	sony -- "sony dvd player" [label=0.73]
+	sony -- "sony product" [label=0.72]
+	sony -- "sony quality" [label=0.72]
+	sony -- "sony customer service group" [label=0.60]
+	"sony customer service group"
+	"sony dvd player"
+	"sony product"
+	"sony quality"
+	sound
+	sturdy
+	"support/toshiba"
+	unit
+	"up-conversion option"
+	"up-conversion option" -- works [label=0.49]
+	use
+	"vcr part"
+	video
+	view
+	wonderful
+	wonderful -- work [label=0.52]
+	work
+	work -- works [label=0.87]
+	work -- working [label=0.74]
+	work -- worked [label=0.72]
+	worked
+	working
+	works
+}

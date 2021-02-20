@@ -1,0 +1,45 @@
+graph Final {
+	laptop
+	laptop -- "toshiba laptop" [label=0.69]
+	laptop -- "toshiba products" [label=0.52]
+	laptop -- specs [label=0.45]
+	laptop -- "runs all my games" [label=0.43]
+	laptop -- "play video games" [label=0.43]
+	laptop -- "windows 8 problems" [label=0.43]
+	laptop -- slim [label=0.42]
+	laptop -- "windows 8.1" [label=0.42]
+	laptop -- pricey [label=0.41]
+	laptop -- presentations [label=0.38]
+	laptop -- "school work" [label=0.37]
+	laptop -- value [label=0.35]
+	"play video games"
+	presentations
+	presentations -- "spreaders sheets" [label=0.63]
+	pricey
+	process
+	process -- processing [label=0.79]
+	process -- processor [label=0.78]
+	process -- "process of purchasing" [label=0.71]
+	process -- shop [label=0.41]
+	"process of purchasing"
+	processing
+	processing -- "processing speed" [label=0.88]
+	"processing speed"
+	processor
+	"runs all my games"
+	"school work"
+	shop
+	shop -- "toshiba laptop" [label=0.53]
+	shop -- tech [label=0.49]
+	slim
+	specs
+	"spreaders sheets"
+	tech
+	tech -- "touch sensitivity" [label=0.53]
+	"toshiba laptop"
+	"toshiba products"
+	"touch sensitivity"
+	value
+	"windows 8 problems"
+	"windows 8.1"
+}

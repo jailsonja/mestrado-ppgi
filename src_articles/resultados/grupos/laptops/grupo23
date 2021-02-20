@@ -1,0 +1,19 @@
+graph Final {
+	"mouse pad"
+	"mouse pad" -- quality [label=0.49]
+	performances
+	performances -- quality [label=0.51]
+	picture
+	picture -- "picture quality" [label=0.77]
+	picture -- "share pictures" [label=0.76]
+	picture -- pricepoint [label=0.51]
+	picture -- slim [label=0.48]
+	"picture quality"
+	"picture quality" -- quality [label=0.79]
+	pricepoint
+	quality
+	quality -- "quality of programs" [label=0.74]
+	"quality of programs"
+	"share pictures"
+	slim
+}

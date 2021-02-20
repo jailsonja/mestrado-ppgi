@@ -1,0 +1,7 @@
+graph Final {
+	battery
+	battery -- "changeable battery" [label=0.67]
+	battery -- "wireless charging" [label=0.46]
+	"changeable battery"
+	"wireless charging"
+}

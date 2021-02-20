@@ -1,0 +1,17 @@
+graph Final {
+	camera
+	camera -- "two cameras" [label=0.68]
+	camera -- "wide angle camera" [label=0.65]
+	camera -- "twist for camera" [label=0.64]
+	camera -- "upgrades, to the camera" [label=0.59]
+	camera -- waterproof [label=0.46]
+	camera -- videos [label=0.42]
+	camera -- weight [label=0.35]
+	"twist for camera"
+	"two cameras"
+	"upgrades, to the camera"
+	videos
+	waterproof
+	weight
+	"wide angle camera"
+}

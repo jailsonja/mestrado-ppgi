@@ -1,0 +1,13 @@
+graph Final {
+	hardware
+	hardware -- "screen response" [label=0.56]
+	hardware -- reception [label=0.54]
+	hardware -- "taking pictures" [label=0.51]
+	reception
+	response
+	response -- "screen response" [label=0.83]
+	response -- "screen display" [label=0.63]
+	"screen display"
+	"screen response"
+	"taking pictures"
+}

@@ -1,0 +1,15 @@
+graph Final {
+	item
+	item -- price [label=0.53]
+	plays
+	plays -- works [label=0.54]
+	price
+	price -- "price on film" [label=0.65]
+	price -- value [label=0.49]
+	price -- "sony camera" [label=0.46]
+	price -- works [label=0.35]
+	"price on film"
+	"sony camera"
+	value
+	works
+}

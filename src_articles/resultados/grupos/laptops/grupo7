@@ -1,0 +1,31 @@
+graph Final {
+	everything
+	everything -- thin [label=0.62]
+	everything -- "presentation creation" [label=0.56]
+	everything -- "super fast" [label=0.50]
+	everything -- simplicity [label=0.48]
+	everything -- freeze [label=0.45]
+	freeze
+	freeze -- "physical keyboard" [label=0.51]
+	hdd
+	hdd -- "super fast" [label=0.43]
+	install
+	install -- software [label=0.53]
+	install -- simplicity [label=0.52]
+	mobile
+	mobile -- thin [label=0.39]
+	"mouse pad"
+	"mouse pad" -- thin [label=0.37]
+	noiseless
+	noiseless -- thin [label=0.39]
+	"nvidia video player"
+	"nvidia video player" -- "super fast" [label=0.58]
+	"physical keyboard"
+	"presentation creation"
+	simplicity
+	software
+	"super fast"
+	thin
+	thin -- transport [label=0.44]
+	transport
+}
