@@ -33,6 +33,41 @@ def preprocess(docs, samp_size=None):
     print('Preprocessing raw texts. Done!')
     return sentences, token_lists, idx_in
 
+def preprocess_alt(docs, gabarito, samp_size=None):
+    """
+    Preprocess the data
+    """
+    if not samp_size:
+        samp_size = 100
+    
+    print('Preprocessing raw texts ...')
+    n_docs = len(docs)
+    sentences = []  # sentence level preprocessed
+    token_lists = []  # word level preprocessed
+    idx_in = []  # index of sample selected
+    mapeamento = {} # um mapa das palavras stemizadas para as palavras não stemizadas
+    #     samp = list(range(100))
+    samp = np.random.choice(n_docs, samp_size)
+    for i, idx in enumerate(samp):
+        sentence = preprocess_sent(docs[idx])
+        token_list, not_stem = preprocess_word_alt(sentence)
+        if token_list:
+            disjunto = set(token_list).isdisjoint(gabarito)
+            if(disjunto):
+                for token in token_list:
+                    if(token not in mapeamento.keys()):
+                        mapeamento[token] = set()
+                for token in not_stem:
+                    for key in mapeamento.keys():
+                        if(key == f_stem([token])[0]):
+                            mapeamento[key].add(token)
+                            break
+                idx_in.append(idx)
+                sentences.append(sentence)
+                token_lists.append(token_list)
+        print('{} %'.format(str(np.round((i + 1) / len(samp) * 100, 2))), end='\r')
+    print('Preprocessing raw texts. Done!')
+    return sentences, token_lists, idx_in, mapeamento
 
 # define model object
 class Topic_Model:

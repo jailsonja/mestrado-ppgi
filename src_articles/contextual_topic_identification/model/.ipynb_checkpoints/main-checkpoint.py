@@ -20,7 +20,7 @@ if __name__ == '__main__':
 
     data = pd.read_csv(str(args.fpath))
     data = data.fillna('')  # only the comments has NaN's
-    rws = data.review
+    rws = data.reviews
     sentences, token_lists, idx_in = preprocess(rws, samp_size=int(args.samp_size))
     # Define the topic model object
     tm = Topic_Model(k = int(args.ntopic), method = str(args.method))

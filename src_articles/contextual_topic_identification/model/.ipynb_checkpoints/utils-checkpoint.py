@@ -20,7 +20,7 @@ def get_topic_words(token_lists, labels, k=None):
     # get sorted word counts
     word_counts = list(map(lambda x: sorted(x, key=lambda x: x[1], reverse=True), word_counts))
     # get topics
-    topics = list(map(lambda x: list(map(lambda x: x[0], x[:10])), word_counts))
+    topics = list(map(lambda x: list(map(lambda x: x[0], x[:20])), word_counts))
 
     return topics
 

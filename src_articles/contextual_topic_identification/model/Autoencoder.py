@@ -1,7 +1,13 @@
-import keras
-from keras.layers import Input, Dense
-from keras.models import Model
+import tensorflow as tf
+from tensorflow import keras
+from tensorflow.keras.layers import Input, Dense
+from tensorflow.keras.models import Model
 from sklearn.model_selection import train_test_split
+import os
+
+os.environ["CUDA_DEVICE_ORDER"]="PCI_BUS_ID"
+os.environ["CUDA_VISIBLE_DEVICES"]="0"
+
 import warnings
 warnings.filterwarnings('ignore')
 

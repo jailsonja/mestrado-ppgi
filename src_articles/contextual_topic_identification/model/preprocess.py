@@ -4,6 +4,7 @@ import re
 import nltk
 from nltk.tokenize import word_tokenize
 from language_detector import detect_language
+import numpy as np
 
 import pkg_resources
 from symspellpy import SymSpell, Verbosity
@@ -165,3 +166,58 @@ def preprocess_word(s):
     w_list = f_stopw(w_list)
 
     return w_list
+
+
+def preprocessamento(docs, gabarito):
+    """
+    Preprocess the data
+    """
+
+    print('Preprocessing raw texts ...')
+    n_docs = len(docs)
+    sentences = []  # sentence level preprocessed
+    token_lists = []  # word level preprocessed
+    idx_in = []  # index of sample selected
+    mapeamento = {}  # um mapa das palavras stemizadas para as palavras não stemizadas
+    #     samp = list(range(100))
+    samp = np.arange(n_docs)
+    for i, idx in enumerate(samp):
+        sentence = preprocess_sent(docs[idx])
+        token_list, not_stem = preprocess_word_alt(sentence)
+        if token_list:
+            disjunto = set(token_list).isdisjoint(gabarito)
+            if(disjunto):
+                for token in token_list:
+                    if(token not in mapeamento.keys()):
+                        mapeamento[token] = set()
+                for token in not_stem:
+                    for key in mapeamento.keys():
+                        if(key == f_stem([token])[0]):
+                            mapeamento[key].add(token)
+                            break
+                idx_in.append(idx)
+                sentences.append(sentence)
+                token_lists.append(not_stem)
+        print('{} %'.format(str(np.round((i + 1) / len(samp) * 100, 2))), end='\r')
+    print('Preprocessing raw texts. Done!')
+    return sentences, token_lists, idx_in, mapeamento
+
+def preprocess_word_alt(s):
+    """
+    Get word level preprocessed data from preprocessed sentences
+    including: remove punctuation, select noun, fix typo, stem, stop_words
+    :param s: sentence to be processed
+    :return: word level pre-processed review
+    """
+    if not s:
+        return None, None
+    w_list = word_tokenize(s)
+    w_list = f_punct(w_list)
+    w_list = f_noun(w_list)
+    w_list = f_typo(w_list)
+    word_list = w_list.copy()
+    w_list = f_stopw(w_list)
+    w_list = f_stem(w_list)
+    word_list = f_stopw(word_list)
+
+    return w_list, word_list
