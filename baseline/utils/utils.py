@@ -1,77 +1,89 @@
-import numpy as np
-from numpy.linalg import norm
-from sklearn.metrics.pairwise import cosine_similarity
-import nltk
-from nltk import word_tokenize
-from nltk import StanfordTagger
-from nltk import StanfordPOSTagger
-from sematch.semantic.similarity import WordNetSimilarity, YagoTypeSimilarity
-from nltk.corpus import brown, treebank
 import pandas as pd
+import numpy as np
+import json
+import time
+from tqdm import tqdm
 
-exp = ['NN', 'NNS', 'NNP', 'NNPS']
-imp = ['JJ', 'JJR', 'JJS', 'VB', 'VBD', 'VBG', 'VBN', 'VBP', 'VBZ', 'VM']
-
-def cosine_simi(matrix):
-    simi = cosine_similarity(matrix)
-    return simi
-
-# retorna a similaridade do cosseno entre dois vetores
-def cosine(x, y):
-    result = np.dot(x, y) / (norm(x) * norm(y))
-    return result
-
-def sim_g(x, y):
-    return cosine(x, y)
-
-def sim_t(x, y):
-    return cosine(x, y)
-
-def sim_gt(x, y):
-    result = max(cosine(x, y), cosine(y, x))
-    return result
-
-def sim(x, y):
-    wg = 0.2
-    wt = 0.2
-    wgt = 0.6
-    value = (wg * simg(x, y)) + (wt * simt(x, y)) + (wgt * simgt(x, y))
-    return sim
-
-# calculo PMI
-def pmi(freq_x_y, freq_x, freq_y):
-    result = np.log(freq_x_y/ freq_x * freq_y)
-    return result
-
-# calculo do NPMI
-def npmi(freq_x_i, freq_x_j, freq_xi_xj, n):
-    return np.log(n*(freq_xi_xj)/freq_x_i * freq_x_j) / -np.log(freq_xi_xj/n)
-
-# normalização da matriz de npmi para o intervalo de [0,1]
-def normalized_t(matrixt):
-    return (matrixt - np.min(matrixt))/np.ptp(matrixt)
-
-def stf_pos_tag(setence):
-    jar = '../../stanford-postagger-full-2020-11-17/stanford-postagger.jar'
-    model = '../../stanford-postagger-full-2020-11-17/models/english-bidirectional-distsim.tagger' # esse mdoelo é melhor que o default do NLTK
-
-    st = StanfordPOSTagger(model, jar, encoding='utf-8')
-    words = nltk.word_tokenize(example1)
-    tagge_words = st.tag(words)
+def read_features_txt(product):
+    file_path_exp = './database/gold_standard/explicit_features_{}.txt'.format(product)
+    file_path_imp = './database/gold_standard/implicit_features_{}.txt'.format(product)
     
-    list_features_exp = []
-    list_features_imp = []
+    list_feature = []
+    f =  open(file_path_exp, 'r')
+    for line in f:
+        term = line.split('\n')[0]
+        list_feature.append(term)
+    f.close()
+    
+    f =  open(file_path_imp, 'r')
+    for line in f:
+        term = line.split('\n')[0]
+        list_feature.append(term)
+    f.close()
+    
+    return list_feature
 
-    for word, word_class in tagge_words:
-        if word_class in exp:
-            list_features_exp.append(word)
-        
-        if word_class in imp:
-            list_features_imp.append(word)
-        
-    return (list_features_exp, list_features_imp)
+def read_reviews_txt(product):
+    file_path_rew = './database/reviews_{}.txt'.format(product)
+    
+    documents = {}
+    
+    #lendo arquivo de reviews
+    f = open(file_path_rew, 'r', encoding = "ISO-8859-1")
+    rws = None
+    idx = 0
+    for line in f:
+        if 'review_text: ' in line:
+            rws = line[13:].split('\n')[0]
+            documents[idx] = rws
+            idx += 1
+        #if '\n' in line:
+        #    documents[idx] = rws
+        #   rws = None
+        #    idx += 1
+            
+    f.close()
+    
+    return documents
+                        
+def set_candidate_terms(product):
+    # ler aspectos explicitos e implicitos das sentencas de um produto
+    candidates = read_features_txt(product)
+    candidates = set(candidates)
+    return candidates
 
-def semantic_similarity(w1, w2):
-    wns = WordNetSimilarity()
-    simi = wns.word_similarity(w1, w2, 'wup')
-    return simi
+def reviews_frequencies(product):
+    dict_terms_freq = {}
+    matrix_freq = {}
+    
+    #lendo arquivo de reviews
+    documents = read_reviews_txt(product)
+    
+    # get termos do produto
+    termos = set_candidate_terms(product)
+        
+    # frequencia termo documentos
+    for termo in termos:
+        cont = 0
+        for _, value in documents.items():
+            if termo in value:
+                cont += 1
+        dict_terms_freq[termo] = cont
+            
+    # frequencia termos documentos
+    for tm1 in termos:
+        matrix_freq[tm1] = {}
+        for tm2 in termos:
+            cont = 0
+            for _, value in documents.items():
+                if tm1 == tm2:
+                    matrix_freq[tm1][tm2] = 0
+                if tm1 != tm2:
+                    if tm1 in value:
+                        if tm2 in value:
+                            cont += 1
+            matrix_freq[tm1][tm2] = cont
+                
+    return dict_terms_freq, matrix_freq
+                
+    
