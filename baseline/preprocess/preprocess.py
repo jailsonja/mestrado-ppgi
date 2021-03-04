@@ -84,16 +84,18 @@ def semantic_similarity(w1, w2):
     return simi
 
 # Função que retorna a distância média em relação a similaridade dos termos dos Clusteres
-def dist_avg(clusterl, cluesterm, wg, wt, wgt):
+def dist_avg(clusterl, cluesterm, matrixG, matrixT, wg, wt, wgt):
     tam1 = len(clusterl)
     tam2 = len(cluesterm)
     sum_simlarity = 0
     
     for c1 in clusterl:
         for c2 in clusterm:
-             sum_simlarity = sim(ci, c2, wg, wt, wgt)
+             sum_simlarity += 1 - sim(matrixG[ci][c2], matrixT[ci][c2], wg, wt, wgt)
     return sum_simlarity/(tam1*tam2)
 
+def distRep(C1, C2, G, T, indices):
+    
 # gera matriz
 def generate_matriz(candidates):
     return candidates, candidates
