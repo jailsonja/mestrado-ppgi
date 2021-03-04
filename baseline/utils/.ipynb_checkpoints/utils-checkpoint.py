@@ -37,11 +37,6 @@ def read_reviews_txt(product):
             rws = line[13:].split('\n')[0]
             documents[idx] = rws
             idx += 1
-        #if '\n' in line:
-        #    documents[idx] = rws
-        #   rws = None
-        #    idx += 1
-            
     f.close()
     
     return documents
@@ -63,7 +58,7 @@ def reviews_frequencies(product):
     termos = set_candidate_terms(product)
         
     # frequencia termo documentos
-    for termo in termos:
+    for termo in tqdm(termos, desc="Frequencia termos documento"):
         cont = 0
         for _, value in documents.items():
             if termo in value:
@@ -71,7 +66,7 @@ def reviews_frequencies(product):
         dict_terms_freq[termo] = cont
             
     # frequencia termos documentos
-    for tm1 in termos:
+    for tm1 in tqdm(termos, desc="Frequencia 2 termos em um mesmo documentos"):
         matrix_freq[tm1] = {}
         for tm2 in termos:
             cont = 0
@@ -85,5 +80,8 @@ def reviews_frequencies(product):
             matrix_freq[tm1][tm2] = cont
                 
     return dict_terms_freq, matrix_freq
-                
-    
+
+# retorna o número de documentos de um produto
+def get_numbers_documents(product):
+    documents = read_reviews_txt(product)
+    return len(documents)

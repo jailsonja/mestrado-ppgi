@@ -8,9 +8,12 @@ from nltk import StanfordPOSTagger
 from sematch.semantic.similarity import WordNetSimilarity, YagoTypeSimilarity
 from nltk.corpus import brown, treebank
 import pandas as pd
+from tqdm import tqdm
 
 exp = ['NN', 'NNS', 'NNP', 'NNPS']
 imp = ['JJ', 'JJR', 'JJS', 'VB', 'VBD', 'VBG', 'VBN', 'VBP', 'VBZ', 'VM']
+
+wns = WordNetSimilarity()
 
 def cosine_simi(matrix):
     simi = cosine_similarity(matrix)
@@ -45,7 +48,14 @@ def pmi(freq_x_y, freq_x, freq_y):
 
 # calculo do NPMI
 def npmi(freq_x_i, freq_x_j, freq_xi_xj, n):
-    return np.log(n*(freq_xi_xj)/freq_x_i * freq_x_j) / -np.log(freq_xi_xj/n)
+    if freq_x_i > 0 and freq_x_j > 0 and freq_xi_xj > 0:
+        factor1 = (n*freq_xi_xj)/(freq_x_i*freq_x_j)
+        factor2 = (freq_xi_xj/n)
+        
+        result = np.log(factor1)/-np.log(factor2)
+        return result
+    
+    return 0.0
 
 # normalização da matriz de npmi para o intervalo de [0,1]
 def normalized_t(matrixt):
@@ -71,7 +81,63 @@ def stf_pos_tag(setence):
         
     return (list_features_exp, list_features_imp)
 
+# retorna a valor da similaridade de duas palavras
 def semantic_similarity(w1, w2):
-    wns = WordNetSimilarity()
     simi = wns.word_similarity(w1, w2, 'wup')
     return simi
+
+tam1 = len(C1)
+    tam2 = len(C2)
+    soma = 0
+    for el in C1:
+        for val in C2:
+            #soma += 1 - sim(el, val, G, T, indices) #Obtem-se a distancia entre as palavras
+            soma += 1 - similarity(el,val,G,T,indices)
+            #soma += 1 - similarityAdaptada(el, val, G, T, indices) #Obtem-se a distancia entre as palavras
+    return soma/(tam1*tam2)
+
+# Função que retorna a distância média em relação a similaridade dos termos dos Clusteres
+def dist_avg(clusterl, cluesterm):
+    tam1 = len(clusterl)
+    tam2 = len(cluesterm)
+    sum_simlarity = 0
+    
+    for c1 in clusterl:
+        for c2 in clusterm:
+            
+def generate_matriz(candidates):
+    return candidates, candidates
+    
+# retorna  a matriz de similaridade de termo a termo
+def get_matrixG(candidates):
+    matrixG = {}
+    cd1, cd2 = generate_matriz(candidates)
+    for candidate1 in tqdm(cd1, desc='Gerando Matriz de similaridade de termo a termo'):
+        matrixG[candidate1] = {}
+        for candidate2 in cd2:
+            if candidate1 == candidate2:
+                matrixG[candidate1][candidate2] = 1               
+            matrixG[candidate1][candidate2] = semantic_similarity(candidate1, candidate2)
+    return matrixG
+            
+# retorna matriz de associão estatística de termo a termo
+def get_matrixT(candidates, freq_terms, matrix_freq, n):
+    cd1, cd2 = generate_matriz(candidates)
+            
+    matrix = np.ones((len(cd1), len(cd2)))
+    
+    for idx, candidate1 in tqdm(enumerate(cd1), desc="Gerando Matriz de Associação de Termo a Termo"):
+        for idy, candidate2 in enumerate(cd2):
+            if candidate1 != candidate2:
+                # npmi(freq_x_i, freq_x_j, freq_xi_xj, n):
+                matrix[idx, idy] = npmi(freq_terms[candidate1], freq_terms[candidate2], matrix_freq[candidate1][candidate2], n)
+                
+    matrix_normalized = normalized_t(matrix)
+    
+    matrixT = {}
+    for idx, c1 in tqdm(enumerate(cd1), desc='Normalizando Matriz de Associaçã de Termo a Termo'):
+        matrixT[c1] = {}
+        for idy, c2 in enumerate(cd2):
+            matrixT[c1][c2] = matrix_normalized[idx, idy]
+    
+    return matrixT
