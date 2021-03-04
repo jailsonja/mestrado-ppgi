@@ -40,13 +40,54 @@ def read_reviews_txt(product):
     f.close()
     
     return documents
-                        
+
+def read_documents_setences(product):
+    file_path_rew = './database/reviews_{}.txt'.format(product)
+    
+    documents = {}
+    
+    #lendo arquivo de reviews
+    f = open(file_path_rew, 'r', encoding = "ISO-8859-1")
+    rws = None
+    idx = 0
+    for line in f:
+        if 'review_text: ' in line:
+            rws = line[13:].split('\n')[0]
+            rws = rws.split('. ')
+            documents[idx] = rws
+            idx += 1
+    f.close()
+    
+    return documents
+
 def set_candidate_terms(product):
     # ler aspectos explicitos e implicitos das sentencas de um produto
     candidates = read_features_txt(product)
     candidates = set(candidates)
     return candidates
 
+def read_setences_terms(product, termos):
+    file_path_rew = './database/reviews_{}.txt'.format(product)
+    setences_terms = {}
+    setences_rws = []  
+    #lendo arquivo de reviews
+    f = open(file_path_rew, 'r', encoding = "ISO-8859-1")
+    for line in f:
+        if 'review_text: ' in line:
+            rws = line[13:].split('\n')[0]
+            setences = rws.split('. ')
+            for setence in setences:
+                setences_rws.append(setence)
+    f.close()
+    
+    for termo in termos:
+        setences_terms[termo] = []
+        for setence in setences_rws:
+            if termo in setence:
+                setences_terms[termo].append(setence)
+                
+    return setences_terms
+    
 def reviews_frequencies(product):
     dict_terms_freq = {}
     matrix_freq = {}

@@ -1,11 +1,11 @@
-import utils
+from preprocess.preprocess import dist_rep, dist_avg
 import time
 import math
 import numpy as np
 import ast
 import json
 from collections import OrderedDict
-
+from utils.utils import read_documents_setences
 
 class Cafe():
     def __init__(self, X, k=50, s=500, sigma=0.8):
@@ -87,7 +87,32 @@ class Cafe():
         candidates_most_freq, _ = self.set_most_frequent_terms(freq_terms)
         return candidates_most_freq
     
-    def violate_constraints(cl, cm, sigma):
+    def checagem(self, cl, cm, matrix_terms, documents_setences):
+        x = 0
+        y = 0
+        z = 0
+        for i in cl:
+            for j in cm:
+                for key, val in documents_setences.items():
+                    for v in val:
+                        if (i and j in val):
+                            x += 1
+                        elif (i in val):
+                            y += 1
+                        elif (j in val):
+                            z += 1
+                            
+        sum_y_z = y + z
+        return x > sum_y_z
+
+    def violate_constraints(cl, cm, matrixG, matrixT, freq_terms):
+        dm = distAvg(cl, cm, matrixG, matrixT) #Distancia média entre os clusteres
+        dr = distRep(cl, cm, matrixG, matrixT, freq_terms) #Distancia entre os representantes dos clusteres
+        
+        distancia = max(dm, dr) #Distancia maxima
+        
+        metrica1 = (distancia >= self.get_sigma()) #Verifica se viola a regra de distancia
+        
         return False
     
     # treinamento modelo

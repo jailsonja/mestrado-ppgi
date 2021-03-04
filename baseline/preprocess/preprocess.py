@@ -34,7 +34,10 @@ def sim_gt(x, y):
     result = max(cosine(x, y), cosine(y, x))
     return result
 
-def sim(x, y, wg, wt, wgt):
+def sim(x, y):
+    wg = 0.2
+    wt = 0.2
+    wgt = 0.6
     value = (wg * simg(x, y)) + (wt * simt(x, y)) + (wgt * simgt(x, y))
     return sim
 
@@ -84,17 +87,34 @@ def semantic_similarity(w1, w2):
     return simi
 
 # Função que retorna a distância média em relação a similaridade dos termos dos Clusteres
-def dist_avg(clusterl, cluesterm, matrixG, matrixT, wg, wt, wgt):
+def dist_avg(clusterl, cluesterm, matrixG, matrixT):
     tam1 = len(clusterl)
     tam2 = len(cluesterm)
     sum_simlarity = 0
     
     for c1 in clusterl:
         for c2 in clusterm:
-             sum_simlarity += 1 - sim(matrixG[ci][c2], matrixT[ci][c2], wg, wt, wgt)
+             sum_simlarity += 1 - sim(matrixG[ci][c2], matrixT[ci][c2])
     return sum_simlarity/(tam1*tam2)
 
-def distRep(C1, C2, G, T, indices):
+def r_max(cluster, freq_terms):
+    v = 0
+    r = None
+    for key, value in freq_terms.items():
+        if value > v:
+            v = value
+            r = key
+    return r
+
+#Função que retorna a distância representativa entre os clusteres em função da
+#similaridade dos representantes, os que possuem maior frequência
+def dist_rep(clusterl, clusterm, matrixG, matrixT, freq_terms):
+    rep1 = r_max(clusterl, freq_terms)
+    rep2 = r_max(clusterm, freq_terms)
+    
+    ans = 1 - sim(matrixG[rep1][rep2], matrixT[rep1][rep2])
+    return ans
+
     
 # gera matriz
 def generate_matriz(candidates):
