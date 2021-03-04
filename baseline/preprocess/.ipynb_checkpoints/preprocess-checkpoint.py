@@ -34,10 +34,7 @@ def sim_gt(x, y):
     result = max(cosine(x, y), cosine(y, x))
     return result
 
-def sim(x, y):
-    wg = 0.2
-    wt = 0.2
-    wgt = 0.6
+def sim(x, y, wg, wt, wgt):
     value = (wg * simg(x, y)) + (wt * simt(x, y)) + (wgt * simgt(x, y))
     return sim
 
@@ -86,25 +83,18 @@ def semantic_similarity(w1, w2):
     simi = wns.word_similarity(w1, w2, 'wup')
     return simi
 
-tam1 = len(C1)
-    tam2 = len(C2)
-    soma = 0
-    for el in C1:
-        for val in C2:
-            #soma += 1 - sim(el, val, G, T, indices) #Obtem-se a distancia entre as palavras
-            soma += 1 - similarity(el,val,G,T,indices)
-            #soma += 1 - similarityAdaptada(el, val, G, T, indices) #Obtem-se a distancia entre as palavras
-    return soma/(tam1*tam2)
-
 # Função que retorna a distância média em relação a similaridade dos termos dos Clusteres
-def dist_avg(clusterl, cluesterm):
+def dist_avg(clusterl, cluesterm, wg, wt, wgt):
     tam1 = len(clusterl)
     tam2 = len(cluesterm)
     sum_simlarity = 0
     
     for c1 in clusterl:
         for c2 in clusterm:
-            
+             sum_simlarity = sim(ci, c2, wg, wt, wgt)
+    return sum_simlarity/(tam1*tam2)
+
+# gera matriz
 def generate_matriz(candidates):
     return candidates, candidates
     
