@@ -21,14 +21,14 @@ def top100(candidates):
 def main():
     # ler conjunto de termos candidatos
     print("Leitura Candidatos Termos")
-    candidates = set_candidate_terms('GPS')
+    candidates = set_candidate_terms('Cell-phones')
 
     #documents_setences = read_setences_terms('Cell-phones', candidates)
-    documents_setences = read_documents_setences('GPS')
+    documents_setences = read_documents_setences('Cell-phones')
     documents_t = documents_terms_set(documents_setences, candidates)
     
   
-    frequencie_terms, matrix_terms = reviews_frequencies('GPS', candidates)
+    frequencie_terms, matrix_terms = reviews_frequencies('Cell-phones', candidates)
     frequencie_terms = dict(sorted(frequencie_terms.items(), key=lambda item: item[1], reverse=True))
 
     top = top100(frequencie_terms)
@@ -45,17 +45,22 @@ def main():
     mtxG = get_matrixG(candidates)
     print('-------------------------------')
     
-    print("###### Instancia modelo #######")
+    print("---- Instancia modelo ---------")
     model = Cafe(candidates)
     print('-------------------------------')
     
-    # discovery_cluster(self, ferq_terms, matrixG, matrixT, documents_setences):
-    print("###### Descobrindo Clusters ######")
+    print("---- Descobrindo Clusters -----")
+    start = time.time()
+    
     clus_aspects = model.discovery_cluster(frequencie_terms, mtxG, mtxT, documents_t)
     print(clus_aspects)
+    
+    end = time.time()
+    print("TEMPO de Execução: ", end - start)
+    
     print('-------------------------------')
     
-    print('###### Selecionando os K clusters')
-    results = model.select(frequencie_terms, clus_aspects)
-    print(results)
+    print('---- Selecionando os K clusters -------')
+    #results = model.select(frequencie_terms, clus_aspects)
+    #print(results)
 main()
