@@ -15,13 +15,17 @@ imp = ['JJ', 'JJR', 'JJS', 'VB', 'VBD', 'VBG', 'VBN', 'VBP', 'VBZ', 'VM']
 
 wns = WordNetSimilarity()
 
+jar = r'/home/jailsonpereira/mestrado-ppgi/stanford-postagger-full-2020-11-17/stanford-postagger.jar'
+model = r'/home/jailsonpereira/mestrado-ppgi/stanford-postagger-full-2020-11-17/models/english-bidirectional-distsim.tagger' 
+st = StanfordPOSTagger(model, jar, encoding='utf-8')
+
 def cosine_simi(matrix):
     simi = cosine_similarity(matrix)
     return simi
 
 # retorna a similaridade do cosseno entre dois vetores
 def cosine(x, y):
-    result = np.dot(x, y) / (norm(x) * norm(y))
+    result = np.exp(np.dot(x, y)) / np.exp((norm(x) * norm(y)))
     return result
 
 def sim_g(x, y):
@@ -38,8 +42,8 @@ def sim(x, y):
     wg = 0.2
     wt = 0.2
     wgt = 0.6
-    value = (wg * simg(x, y)) + (wt * simt(x, y)) + (wgt * simgt(x, y))
-    return sim
+    value = (wg * sim_g(x, y)) + (wt * sim_t(x, y)) + (wgt * sim_gt(x, y))
+    return value
 
 # calculo PMI
 def pmi(freq_x_y, freq_x, freq_y):
@@ -62,13 +66,9 @@ def normalized_t(matrixt):
     return (matrixt - np.min(matrixt))/np.ptp(matrixt)
 
 def stf_pos_tag(setence):
-    jar = '../../stanford-postagger-full-2020-11-17/stanford-postagger.jar'
-    model = '../../stanford-postagger-full-2020-11-17/models/english-bidirectional-distsim.tagger' # esse mdoelo é melhor que o default do NLTK
-
-    st = StanfordPOSTagger(model, jar, encoding='utf-8')
-    words = nltk.word_tokenize(example1)
+    words = nltk.word_tokenize(setence)
     tagge_words = st.tag(words)
-    
+
     list_features_exp = []
     list_features_imp = []
 
@@ -81,20 +81,29 @@ def stf_pos_tag(setence):
         
     return (list_features_exp, list_features_imp)
 
+def stf_word(word):
+    #w = nltk.word_tokenize(word)
+    tag = st.tag(word)
+    result = False
+    for wd, tg in tag:
+        if tg in exp:
+            result = True
+    return result
+
 # retorna a valor da similaridade de duas palavras
 def semantic_similarity(w1, w2):
     simi = wns.word_similarity(w1, w2, 'wup')
     return simi
 
 # Função que retorna a distância média em relação a similaridade dos termos dos Clusteres
-def dist_avg(clusterl, cluesterm, matrixG, matrixT):
+def dist_avg(clusterl, clusterm, matrixG, matrixT):
     tam1 = len(clusterl)
-    tam2 = len(cluesterm)
+    tam2 = len(clusterm)
     sum_simlarity = 0
     
     for c1 in clusterl:
         for c2 in clusterm:
-             sum_simlarity += 1 - sim(matrixG[ci][c2], matrixT[ci][c2])
+             sum_simlarity += 1 - sim(matrixG[c1][c2], matrixT[c1][c2])
     return sum_simlarity/(tam1*tam2)
 
 def r_max(cluster, freq_terms):

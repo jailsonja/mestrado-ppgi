@@ -1,4 +1,4 @@
-from preprocess.preprocess import dist_rep, dist_avg
+from preprocess.preprocess import dist_rep, dist_avg, stf_word
 import time
 import math
 import numpy as np
@@ -56,106 +56,167 @@ class Cafe():
             else:
                 candidates_less_freq.add(k)
                 
-        return candidates_most_freq, candidates_less_freq
+        return (candidates_most_freq, candidates_less_freq)
     
     # retorna lista de conjunto de termos candidatos mais frequentes
     def set_most_frequent_terms(self, freq_terms):
-        candidates_most_freq, _ = self.most_frequent_terms(freq_terms)
+        candidates_most_freq = self.most_frequent_terms(freq_terms)
         
         list_set_candidates = []
-        for candidate in candidates_most_freq:
+        cmf = candidates_most_freq[0]
+        for candidate in cmf:
             candi = set()
-            cadi.add(candidate)
-            list.append(candi)
+            candi.add(candidate)
+            list_set_candidates.append(candi)
         
         return list_set_candidates
     
     # retorna lista de conjunto de termos candidatos menos frequentes
     def set_less_frequent_terms(self, freq_terms):
-        _, candidates_less_freq = self.most_frequent_terms(freq_terms)
+        candidates_less_freq = self.most_frequent_terms(freq_terms)
         
         list_set_candidates = []
-        for candidate in candidates_less_freq:
+        clf = candidates_less_freq[1]
+        for candidate in clf:
             candi = set()
-            cadi.add(candidate)
-            list.append(candi)
+            candi.add(candidate)
+            list_set_candidates.append(candi)
         
         return list_set_candidates
     
     # retorna o um conjunto de dados com todos os clusters mais frequentes
     def set_theta(self, freq_terms):
-        candidates_most_freq, _ = self.set_most_frequent_terms(freq_terms)
+        candidates_most_freq = self.set_most_frequent_terms(freq_terms)
         return candidates_most_freq
     
-    def checagem(self, cl, cm, matrix_terms, documents_setences):
+    def check_metric3(self, cl, cm, documents_setences):
         x = 0
-        y = 0
-        z = 0
+        y = 0        
+        for l in cl:
+            for m in cm:
+                for key, valor in documents_setences.items():
+                    d1 = set(valor[l])
+                    d2 = set(valor[m])
+                    if(len(d1) > 0 and len(d2) > 0):
+                        inter = d1.intersection(d2)
+                        union = d1.union(d2)
+                        x += len(inter)
+                        y += len(union - inter)
+                        
+        return x > y
+    
+    def check_metric2(self, cl, cm):
         for i in cl:
-            for j in cm:
-                for key, val in documents_setences.items():
-                    for v in val:
-                        if (i and j in val):
-                            x += 1
-                        elif (i in val):
-                            y += 1
-                        elif (j in val):
-                            z += 1
-                            
-        sum_y_z = y + z
-        return x > sum_y_z
-
-    def violate_constraints(cl, cm, matrixG, matrixT, freq_terms):
-        dm = distAvg(cl, cm, matrixG, matrixT) #Distancia média entre os clusteres
-        dr = distRep(cl, cm, matrixG, matrixT, freq_terms) #Distancia entre os representantes dos clusteres
+            target = stf_word(i)
+            if target:
+                break
+                
+        if target:
+            return target
+        
+        for i in cm:
+            target = stf_word(i)
+            if target:
+                break
+        return target
+                
+    def violate_constraints(self, cl, cm, matrixG, matrixT, freq_terms, documents_setences):
+        dm = dist_avg(cl, cm, matrixG, matrixT) #Distancia média entre os clusteres
+        dr = dist_rep(cl, cm, matrixG, matrixT, freq_terms) #Distancia entre os representantes dos clusteres
         
         distancia = max(dm, dr) #Distancia maxima
         
-        metrica1 = (distancia >= self.get_sigma()) #Verifica se viola a regra de distancia
+        metrica1 = (distancia <= self.get_sigma()) #Verifica se viola a regra de distancia
+        metrica2 = self.check_metric2(cl, cm)
+        metrica3 = self.check_metric3(cl, cm, documents_setences)
         
-        return False
+        if metrica3:
+            print("Metrica1: {}, Metrica2: {}, Metrica3: {}".format(metrica1, metrica2, metrica3))
+        return metrica1 and metrica2 and metrica3
     
     # treinamento modelo
-    def fit(self, ferq_terms, matrix_terms):
+    def discovery_cluster(self, freq_terms, matrixG, matrixT, documents_setences):
         sigma = self.get_sigma()
         
         theta = self.set_theta(freq_terms)
-        list_set_candidates = self.set_most_frequent_terms(freq_terms)
         list_less_candidates = self.set_less_frequent_terms(freq_terms)
         
         idx = 0
-        idj = len(list_set_candidates) - 1
-        
+
         set_result = set()
         
         # uni os termos mais frequentes, levando em consideração o Violete Constraints
         # Clusters Sementes
-        while len(theta) > 0:
-            while idj >= 0: 
+        pt = '#'
+        while idx < len(theta):
+            idj = 0
+            pt += '#'
+            print(pt)
+            while idj < len(theta):
                 if idx != idj:
-                    result = not self.violate_constraints(theta[idx], list_set_candidates[idj], sigma)
+                    result = self.violate_constraints(theta[idx], theta[idj], matrixG, matrixT, freq_terms,documents_setences)
                     if result:
-                        list_set_candidates[idj] = list_set_candidates[idj].union(theta[idx])
-                        _ = theta.pop(idx)
-                        idj -= 1
+                        if idj > idx:
+                            print('IDX: ', idj, 'IDJ: ', idx)
+                            print(theta[idj], theta[idx])
+                            theta[idx] = theta[idx].union(theta[idj])
+                            theta.remove(theta[idj])
+                        else:
+                            print('IDX: ', idx, 'IDJ: ', idj)
+                            print(theta[idj], theta[idx])
+                            theta[idj] = theta[idj].union(theta[idx])
+                            theta.remove(theta[idx])
                     else:
-                        idj -= 1                       
+                        idj += 1                       
                 else:
-                    idj -= 1
+                    idj += 1
+                    
+            idx += 1
                 
         # uni os termos menos frequentes, levando em consideração o Violete Constraints
         # Clusters restantes com o mais semelhante entre os sementes
+        print('Merge apsectos restantes')
         for index, xi in enumerate(list_less_candidates):
             new_cluster = True
-            for idx_i, value in enumerate(list_set_candidates):
-                result = not self.violate_constraints(xi, list_set_candidates[idx_i], sigma)
+            for idx_i, value in enumerate(theta):
+                result = self.violate_constraints(xi, list_set_candidates[idx_i], matrixG, matrixT, freq_terms, documents_setences)
                 if result:
                     list_set_candidates[idx_i] = list_set_candidates[idx_i].union(xi)
                     new_cluster = False
                     
             if new_cluster:
-                list_set_candidates.appen(xi)
+                list_set_candidates.append(xi)
            
-        # falta SELECT
-        return list_set_candidates
+        return theta
+    
+    def teste(self, freq_terms):
+        print(self.set_theta(freq_terms))
+        
+        
+    def select(self, freq_terms, cluster_results):
+        groups = {}
+        results = []
+        for idx, cluster in enumerate(cluster_results):
+            soma = 0
+            lista_clu = []
+            for clu in cluster:
+                soma += freq_terms[clu]
+                lista_clu.append(clu)
+            value = (soma, lista_clu)
+            groups[idx] = value
+            
+        groups = dict(sorted(groups.items(),key=lambda x: x[1][0], reverse=True))
+        
+        if len(groups) < self.get_k():
+            for key, value in groups.items():
+                results.append(value[1])
+            return results
+        elif len(groups) >= self.get_k():
+            cont = 0
+            for key, value in groups.items():
+                if cont <= self.get_k():
+                    results.append(value[1])
+                    cont += 1
+                    break
+            return results
    

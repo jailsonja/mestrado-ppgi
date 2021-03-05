@@ -60,6 +60,19 @@ def read_documents_setences(product):
     
     return documents
 
+def documents_terms_set(documents, candidates):
+    documents_terms = {}
+    
+    for key, docu in documents.items(): #doc[0] = [set, set, set]
+        documents_terms[key] = {}
+        for termo in candidates:
+            documents_terms[key][termo] = []
+            for d in docu:
+                if termo in d:
+                    documents_terms[key][termo].append(d)
+                    
+    return documents_terms
+
 def set_candidate_terms(product):
     # ler aspectos explicitos e implicitos das sentencas de um produto
     candidates = read_features_txt(product)
@@ -88,7 +101,7 @@ def read_setences_terms(product, termos):
                 
     return setences_terms
     
-def reviews_frequencies(product):
+def reviews_frequencies(product, termos):
     dict_terms_freq = {}
     matrix_freq = {}
     
@@ -96,7 +109,7 @@ def reviews_frequencies(product):
     documents = read_reviews_txt(product)
     
     # get termos do produto
-    termos = set_candidate_terms(product)
+    #termos = set_candidate_terms(product)
         
     # frequencia termo documentos
     for termo in tqdm(termos, desc="Frequencia termos documento"):
@@ -119,7 +132,7 @@ def reviews_frequencies(product):
                         if tm2 in value:
                             cont += 1
             matrix_freq[tm1][tm2] = cont
-                
+    
     return dict_terms_freq, matrix_freq
 
 # retorna o número de documentos de um produto
