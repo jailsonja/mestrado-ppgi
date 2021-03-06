@@ -7,6 +7,7 @@ import json
 from collections import OrderedDict
 from utils.utils import read_documents_setences
 from tqdm import tqdm
+import time
 
 class Cafe():
     def __init__(self, X, k=50, s=50, sigma=0.8):
@@ -155,16 +156,16 @@ class Cafe():
                 if idx != idj:
                     result = self.violate_constraints(theta[idx], theta[idj], matrixG, matrixT, freq_terms,documents_setences)
                     if result:
-                        #if idj > idx:
-                        #    print('IDX: ', idj, 'IDJ: ', idx)
-                        #    print(theta[idj], theta[idx])
-                        #    theta[idx] = theta[idx].union(theta[idj])
-                        #    theta.remove(theta[idj])
-                        #else:
-                        print('IDX: ', idx, 'IDJ: ', idj)
-                        print(theta[idj], theta[idx])
-                        theta[idj] = theta[idj].union(theta[idx])
-                        theta.remove(theta[idx])
+                        if idj > idx:
+                            print('IDX: ', idj, 'IDJ: ', idx)
+                            print(theta[idj], theta[idx])
+                            theta[idx] = theta[idx].union(theta[idj])
+                            theta.remove(theta[idj])
+                        else:
+                            print('IDX: ', idx, 'IDJ: ', idj)
+                            print(theta[idj], theta[idx])
+                            theta[idj] = theta[idj].union(theta[idx])
+                            theta.remove(theta[idx])
                     else:
                         idj += 1
                         pbar.update(1)

@@ -1,0 +1,203 @@
+digraph G {
+	compound=true
+	00 [label=little]
+	01 [label=long]
+	02 [label=speed]
+	03 [label=weight]
+	10 [label=app]
+	11 [label=apps]
+	20 [label=problems]
+	21 [label=much]
+	30 [label=light]
+	31 [label=display]
+	32 [label=quick]
+	40 [label=big]
+	41 [label=change]
+	50 [label=use]
+	51 [label=easy]
+	52 [label=user]
+	53 [label=friendly]
+	60 [label=battery]
+	61 [label=mode]
+	70 [label=back]
+	71 [label=design]
+	80 [label=works]
+	81 [label=work]
+	90 [label=top]
+	91 [label=processor]
+	92 [label=problem]
+	100 [label=touch]
+	101 [label=screen]
+	110 [label=smart]
+	111 [label=art]
+	120 [label=drop]
+	121 [label=music]
+	122 [label=videos]
+	123 [label=call]
+	124 [label=calls]
+	130 [label=hand]
+	131 [label=keyboard]
+	132 [label=hands]
+	140 [label=performance]
+	141 [label=quality]
+	142 [label=sound]
+	150 [label=slow]
+	151 [label=low]
+	160 [label=off]
+	161 [label=move]
+	170 [label=ate]
+	171 [label=update]
+	180 [label=pen]
+	181 [label=ring]
+	190 [label=pictures]
+	191 [label=video]
+	200 [label=able]
+	210 [label=cover]
+	211 [label=learn]
+	212 [label=feature]
+	213 [label=features]
+	220 [label=picture]
+	230 [label=function]
+	231 [label=last]
+	232 [label=days]
+	233 [label=charge]
+	240 [label=down]
+	250 [label=fast]
+	251 [label=high]
+	260 [label=os]
+	270 [label=size]
+	271 [label=right]
+	280 [label=upgrade]
+	281 [label=android]
+	290 [label=time]
+	291 [label=def]
+	300 [label=thin]
+	301 [label=nothing]
+	310 [label=software]
+	311 [label=fun]
+	320 [label=lag]
+	321 [label=real]
+	330 [label=buy]
+	340 [label=look]
+	341 [label=power]
+	342 [label=looking]
+	350 [label=camera]
+	360 [label=ui]
+	370 [label=fit]
+	371 [label=pocket]
+	380 [label=issue]
+	390 [label=ton]
+	400 [label=connect]
+	410 [label=card]
+	420 [label=worth]
+	421 [label=price]
+	430 [label=large]
+	431 [label=small]
+	440 [label=old]
+	450 [label=run]
+	460 [label=hard]
+	470 [label=ease]
+	471 [label=few]
+	480 [label=same]
+	490 [label=add]
+	00 -> 01
+	01 -> 02
+	02 -> 03
+	03 -> 04
+	10 -> 11
+	11 -> 12
+	20 -> 21
+	21 -> 22
+	30 -> 31
+	31 -> 32
+	32 -> 33
+	40 -> 41
+	41 -> 42
+	50 -> 51
+	51 -> 52
+	52 -> 53
+	53 -> 54
+	60 -> 61
+	61 -> 62
+	70 -> 71
+	71 -> 72
+	80 -> 81
+	81 -> 82
+	90 -> 91
+	91 -> 92
+	92 -> 93
+	100 -> 101
+	101 -> 102
+	110 -> 111
+	111 -> 112
+	120 -> 121
+	121 -> 122
+	122 -> 123
+	123 -> 124
+	124 -> 125
+	130 -> 131
+	131 -> 132
+	132 -> 133
+	140 -> 141
+	141 -> 142
+	142 -> 143
+	150 -> 151
+	151 -> 152
+	160 -> 161
+	161 -> 162
+	170 -> 171
+	171 -> 172
+	180 -> 181
+	181 -> 182
+	190 -> 191
+	191 -> 192
+	200 -> 201
+	210 -> 211
+	211 -> 212
+	212 -> 213
+	213 -> 214
+	220 -> 221
+	230 -> 231
+	231 -> 232
+	232 -> 233
+	233 -> 234
+	240 -> 241
+	250 -> 251
+	251 -> 252
+	260 -> 261
+	270 -> 271
+	271 -> 272
+	280 -> 281
+	281 -> 282
+	290 -> 291
+	291 -> 292
+	300 -> 301
+	301 -> 302
+	310 -> 311
+	311 -> 312
+	320 -> 321
+	321 -> 322
+	330 -> 331
+	340 -> 341
+	341 -> 342
+	342 -> 343
+	350 -> 351
+	360 -> 361
+	370 -> 371
+	371 -> 372
+	380 -> 381
+	390 -> 391
+	400 -> 401
+	410 -> 411
+	420 -> 421
+	421 -> 422
+	430 -> 431
+	431 -> 432
+	440 -> 441
+	450 -> 451
+	460 -> 461
+	470 -> 471
+	471 -> 472
+	480 -> 481
+	490 -> 491
+}

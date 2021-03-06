@@ -2,6 +2,7 @@ from model.cafe import Cafe
 from utils.utils import set_candidate_terms, reviews_frequencies, read_reviews_txt, get_numbers_documents, read_setences_terms, read_documents_setences, documents_terms_set
 from preprocess.preprocess import get_matrixG, generate_matriz, get_matrixT, stf_word
 from collections import OrderedDict
+import time
 
 print("Iniciando....")
 
