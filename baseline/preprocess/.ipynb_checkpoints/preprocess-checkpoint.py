@@ -1,17 +1,22 @@
 import numpy as np
 from numpy.linalg import norm
+import pandas as pd
+from tqdm import tqdm
+import math
+
 from sklearn.metrics.pairwise import cosine_similarity
+
 import nltk
 from nltk import word_tokenize
 from nltk import StanfordTagger
 from nltk import StanfordPOSTagger
-from sematch.semantic.similarity import WordNetSimilarity, YagoTypeSimilarity
 from nltk.corpus import brown, treebank
-import pandas as pd
-from tqdm import tqdm
+
+from sematch.semantic.similarity import WordNetSimilarity, YagoTypeSimilarity
+from difflib import SequenceMatcher
 
 exp = ['NN', 'NNS', 'NNP', 'NNPS']
-imp = ['JJ', 'JJR', 'JJS', 'VB', 'VBD', 'VBG', 'VBN', 'VBP', 'VBZ', 'VM']
+imp = ['JJ', 'JJR', 'JJS', 'VB']
 
 wns = WordNetSimilarity()
 
@@ -25,8 +30,14 @@ def cosine_simi(matrix):
 
 # retorna a similaridade do cosseno entre dois vetores
 def cosine(x, y):
-    result = np.exp(np.dot(x, y)) / np.exp((norm(x) * norm(y)))
-    return result
+    #if y == 0 or x == 0:
+    #    return 0
+    #return np.dot(x, y) / (norm(x) * norm(y))
+    cos = np.dot(x, y) / (norm(x) * norm(y))
+    if np.isnan(cos):
+        return 0.0
+    else:
+        return cos
 
 def sim_g(x, y):
     return cosine(x, y)
@@ -42,8 +53,11 @@ def sim(x, y):
     wg = 0.2
     wt = 0.2
     wgt = 0.6
-    value = (wg * sim_g(x, y)) + (wt * sim_t(x, y)) + (wgt * sim_gt(x, y))
-    return value
+    
+    if x != y:
+        return (wg * sim_g(x, y)) + (wt * sim_t(x, y)) + (wgt * sim_gt(x, y))
+    else:
+        return 1
 
 # calculo PMI
 def pmi(freq_x_y, freq_x, freq_y):
@@ -52,34 +66,51 @@ def pmi(freq_x_y, freq_x, freq_y):
 
 # calculo do NPMI
 def npmi(freq_x_i, freq_x_j, freq_xi_xj, n):
+
     if freq_x_i > 0 and freq_x_j > 0 and freq_xi_xj > 0:
+        
         factor1 = (n*freq_xi_xj)/(freq_x_i*freq_x_j)
         factor2 = (freq_xi_xj/n)
-        
-        result = np.log(factor1)/-np.log(factor2)
-        return result
     
+        value = np.log(factor1)/-np.log(factor2)
+        npmi = (value+1)/2
+        
+        return npmi
     return 0.0
 
 # normalização da matriz de npmi para o intervalo de [0,1]
 def normalized_t(matrixt):
     return (matrixt - np.min(matrixt))/np.ptp(matrixt)
 
-def stf_pos_tag(setence):
+def stf_pos_tag_setence(setence):
     words = nltk.word_tokenize(setence)
     tagge_words = st.tag(words)
 
-    list_features_exp = []
-    list_features_imp = []
-
+    list_candidates = []
     for word, word_class in tagge_words:
         if word_class in exp:
-            list_features_exp.append(word)
+            list_candidates.append(word)
         
         if word_class in imp:
-            list_features_imp.append(word)
+            list_candidates.append(word)
         
-    return (list_features_exp, list_features_imp)
+    #return (list_features_exp, list_features_imp)
+    return list_candidates
+
+def stf_pos_tag(word):
+    tag = st.tag(word)
+    cl = None
+    for w, w_class in tag:
+        if w_class in exp:
+            cl = w_class
+            break
+        elif w_class in imp:
+            cl = w_class
+            break
+        else:
+            cl = w_class
+            break
+    return cl
 
 def stf_word(word):
     #w = nltk.word_tokenize(word)
@@ -88,31 +119,50 @@ def stf_word(word):
     for wd, tg in tag:
         if tg in exp:
             result = True
+            break
     return result
+
+def semantic_similarity_nltk(w1, w2):
+    return nltk.edit_distance(w1, w2)
 
 # retorna a valor da similaridade de duas palavras
 def semantic_similarity(w1, w2):
-    simi = wns.word_similarity(w1, w2, 'wup')
+    simi = wns.word_similarity(w1, w2, 'li')   
     return simi
+
+def similarity_words(a, b):
+    return SequenceMatcher(None, a, b).ratio()
 
 # Função que retorna a distância média em relação a similaridade dos termos dos Clusteres
 def dist_avg(clusterl, clusterm, matrixG, matrixT):
     tam1 = len(clusterl)
     tam2 = len(clusterm)
-    sum_simlarity = 0
     
-    for c1 in clusterl:
-        for c2 in clusterm:
-             sum_simlarity += 1 - sim(matrixG[c1][c2], matrixT[c1][c2])
-    return sum_simlarity/(tam1*tam2)
+    tam = tam1*tam2
+    
+    sum_similarity = 0
+    
+    for c1 in list(clusterl):
+        for c2 in list(clusterm):                  
+            sum_similarity += 1 - sim(matrixG[c1][c2], matrixT[c1][c2])
+    
+    if tam > 0:
+        return sum_similarity/(tam1*tam2)
+    else:
+        return 0
 
 def r_max(cluster, freq_terms):
+    cluster_sort = sorted(cluster)
     v = 0
     r = None
-    for key, value in freq_terms.items():
-        if value > v:
-            v = value
-            r = key
+    for cl in cluster_sort:
+        if freq_terms[cl] > v:
+            v = freq_terms[cl]
+            r = cl
+            
+    if r == None:
+        r = cluster_sort[0]
+        
     return r
 
 #Função que retorna a distância representativa entre os clusteres em função da
@@ -137,8 +187,9 @@ def get_matrixG(candidates):
         matrixG[candidate1] = {}
         for candidate2 in cd2:
             if candidate1 == candidate2:
-                matrixG[candidate1][candidate2] = 1               
-            matrixG[candidate1][candidate2] = semantic_similarity(candidate1, candidate2)
+                matrixG[candidate1][candidate2] = 1
+            else:
+                matrixG[candidate1][candidate2] = similarity_words(candidate1, candidate2)
     return matrixG
             
 # retorna matriz de associão estatística de termo a termo
@@ -152,13 +203,13 @@ def get_matrixT(candidates, freq_terms, matrix_freq, n):
             if candidate1 != candidate2:
                 # npmi(freq_x_i, freq_x_j, freq_xi_xj, n):
                 matrix[idx, idy] = npmi(freq_terms[candidate1], freq_terms[candidate2], matrix_freq[candidate1][candidate2], n)
-                
-    matrix_normalized = normalized_t(matrix)
+               
+    #matrix_normalized = normalized_t(matrix)
     
     matrixT = {}
     for idx, c1 in tqdm(enumerate(cd1), desc='Normalizando Matriz de Associaçã de Termo a Termo'):
         matrixT[c1] = {}
         for idy, c2 in enumerate(cd2):
-            matrixT[c1][c2] = matrix_normalized[idx, idy]
+            matrixT[c1][c2] = matrix[idx, idy]
     
     return matrixT

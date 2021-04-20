@@ -1,67 +1,78 @@
 from model.cafe import Cafe
-from utils.utils import set_candidate_terms, reviews_frequencies, read_reviews_txt, get_numbers_documents, read_setences_terms, read_documents_setences, documents_terms_set
-from preprocess.preprocess import get_matrixG, generate_matriz, get_matrixT, stf_word
+from utils.utils import *
+from preprocess.preprocess import *
 from collections import OrderedDict
+from graphviz import Graph
 import time
+import json
 
 print("Iniciando....")
-
-def top100(candidates):
-    freq_terms = {}
-    cont = 0
-    for k, c in candidates.items():
-        if cont < 100:
-            freq_terms[k] = c
-            cont += 1
-        else:
-            break
-        
-    cnd = set(freq_terms.keys())
-    return (freq_terms, cnd)
 
 def main():
     # ler conjunto de termos candidatos
     print("Leitura Candidatos Termos")
-    candidates = set_candidate_terms('Cell-phones')
+    product = 'TV'
+    documents_reviews = read_json(f'./database-process/{product}/{product}_documents_reviews.json') # ler os documentos e retorna um dicionário com um idx e uma lista com reviews
 
-    #documents_setences = read_setences_terms('Cell-phones', candidates)
-    documents_setences = read_documents_setences('Cell-phones')
-    documents_t = documents_terms_set(documents_setences, candidates)
-    
-  
-    frequencie_terms, matrix_terms = reviews_frequencies('Cell-phones', candidates)
-    frequencie_terms = dict(sorted(frequencie_terms.items(), key=lambda item: item[1], reverse=True))
+    explicit, implicit = extract_terms_tag(product)
+    candidates_tag = dict()
 
-    top = top100(frequencie_terms)
-    frequencie_terms = top[0]
-    candidates = top[1]
+    for k in explicit:
+        candidates_tag[k] = 'NN'
     
+    for k in implicit:
+        candidates_tag[k] = 'VB'
     
+    documents_terms = read_json(f'./database-process/{product}/{product}_doc_terms_setencas.json')
     print('-------------------------------')
     
-    n = len(documents_setences)
+    print("Calculando Frequências")
+    frequencie_terms = read_json(f'./database-process/{product}/{product}_terms_freq_doc.json')
+    
+    matrix_terms = read_json(f'./database-process/{product}/{product}_terms_freq_terms.json')
+
+    print('-------------------------------')
+    
+    candidates = list(frequencie_terms.keys())
+    print(candidates)
+        
+    print("Gerando Matrizes de Associação e Similaridade")
+    n = len(documents_reviews)
     mtxT = get_matrixT(candidates, frequencie_terms, matrix_terms, n)
-    print('-------------------------------')
     
+    with open(f'./database-process/{product}/' + f'{product}_mtxT.json', 'w') as fp:
+        json.dump(mtxT, fp)
+        
     mtxG = get_matrixG(candidates)
+    with open(f'./database-process/{product}/' + f'{product}_mtxG.json', 'w') as fp:
+        json.dump(mtxG, fp)
+
+    
     print('-------------------------------')
     
     print("---- Instancia modelo ---------")
-    model = Cafe(candidates)
+    model = Cafe(candidates, candidates_tag)
+    
     print('-------------------------------')
     
     print("---- Descobrindo Clusters -----")
+
     start = time.time()
-    
-    clus_aspects = model.discovery_cluster(frequencie_terms, mtxG, mtxT, documents_t)
+   
+    clus_aspects = model.discovery_cluster(frequencie_terms, mtxG, mtxT, documents_terms)
     print(clus_aspects)
     
-    end = time.time()
-    print("TEMPO de Execução: ", end - start)
+    list_save_txt(clus_aspects, product, 'Clusters')
     
     print('-------------------------------')
     
     print('---- Selecionando os K clusters -------')
-    #results = model.select(frequencie_terms, clus_aspects)
+    results = model.select(frequencie_terms, clus_aspects)
+    print(results)
+    list_save_txt(results, product, f'{product}-K')
+    
+    end = time.time()
+    print("TEMPO de Execução: ", end - start)
     #print(results)
+    
 main()
